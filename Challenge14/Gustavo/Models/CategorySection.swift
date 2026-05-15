@@ -8,21 +8,29 @@
 import Foundation
 import UIKit
 
-struct CategorySection{
+struct Category{
     let title: String
     let color: UIColor
     let image: UIImage?
 }
 
-let mockCategories: [CategorySection] = [
-    CategorySection(title: "Pop", color: .systemPurple, image: nil),
-    CategorySection(title: "Indie", color: .systemGreen, image: nil),
-    CategorySection(title: "News & Politics", color: .systemBlue, image: nil),
-    CategorySection(title: "Comedy", color: .systemOrange, image: nil),
-    CategorySection(title: "2021 Wraped", color: .systemTeal, image: nil),
-    CategorySection(title: "Podcasts", color: .systemIndigo, image: nil),
-    CategorySection(title: "Made For you", color: .systemMint, image: UIImage(named: "albumMatue")),
-    CategorySection(title: "Charts", color: .systemPink, image: nil),
-    
+struct CategorySection {
+    let title: String
+    let items: [Category]
+}
+
+let mockSections: [CategorySection] = [
+    CategorySection(title: "Your top genres", items: [
+        Category(title: "Pop", color: .systemPurple, image: nil),
+        Category(title: "Indie", color: .systemGreen, image: nil),
+    ]),
+    CategorySection(title: "Browse all", items: [
+        Category(title: "News & Politics", color: .systemBlue, image: nil),
+        Category(title: "Podcasts", color: .systemIndigo, image: nil),
+        Category(title: "Comedy", color: .systemOrange, image: nil),
+        Category(title: "2021 Wrapped", color: .systemTeal, image: nil),
+        Category(title: "Made For You", color: .systemMint, image: UIImage(named: "albumMatue")),
+        Category(title: "Charts", color: .systemPink, image: nil),
+    ])
 ]
  

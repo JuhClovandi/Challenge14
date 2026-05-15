@@ -75,10 +75,20 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
         
         let isIpad = traitCollection.horizontalSizeClass == .regular
         playerView.isHidden = isIpad
+        
+        updateScrollInsets(isIpad: isIpad)
+        
         headerView.onCameraTapped = { [weak self] in
             self?.cameraButtonTapped()
         }
         
+    }
+    
+    private func updateScrollInsets(isIpad: Bool) {
+        // O player tem 60 de altura + 8 de margem inferior + 8 de respiro = 76
+        let bottomInset: CGFloat = isIpad ? 16 : 76
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+        collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
     }
 
     @objc private func cameraButtonTapped() {
@@ -90,6 +100,15 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
         buildHierarchy()
         setupConstraints()
         applyAdditionalChanges()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
+            let isIpad = traitCollection.horizontalSizeClass == .regular
+            playerView.isHidden = isIpad
+            updateScrollInsets(isIpad: isIpad)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

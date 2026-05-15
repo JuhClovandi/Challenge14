@@ -30,7 +30,6 @@ class MainSplitViewController: UISplitViewController {
         self.preferredSplitBehavior = .tile
         
         let sidebarVC = UIViewController()
-        sidebarVC.view.backgroundColor = .black
         
         let searchVC = SearchViewController()
         let detailNav = UINavigationController(rootViewController: searchVC)
@@ -41,18 +40,19 @@ class MainSplitViewController: UISplitViewController {
         
         // Se estiver no iPad, configura o player na sidebar
         if traitCollection.horizontalSizeClass == .regular {
-            musicPlayer.configureForIpad()
             setupIpadPlayer(in: sidebarVC.view)
         }
     }
     
     private func setupIpadPlayer(in container: UIView) {
         container.addSubview(musicPlayer)
+        musicPlayer.configureForIpad()
+        
         NSLayoutConstraint.activate([
-            musicPlayer.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16),
-            musicPlayer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
-            musicPlayer.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            musicPlayer.heightAnchor.constraint(equalToConstant: 120)
-        ])
+                musicPlayer.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16),
+                musicPlayer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
+                musicPlayer.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+                musicPlayer.heightAnchor.constraint(equalToConstant: 500)
+            ])
     }
 }
