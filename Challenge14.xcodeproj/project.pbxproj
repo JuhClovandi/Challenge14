@@ -10,22 +10,9 @@
 		A6B01A4F2FB4EFA1000C4849 /* Challenge14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A6B01A612FB4EFA3000C4849 /* Exceptions for "Challenge14" folder in "Challenge14" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = A6B01A4E2FB4EFA1000C4849 /* Challenge14 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A6B01A512FB4EFA1000C4849 /* Challenge14 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A6B01A612FB4EFA3000C4849 /* Exceptions for "Challenge14" folder in "Challenge14" target */,
-			);
 			path = Challenge14;
 			sourceTree = "<group>";
 		};
@@ -147,7 +134,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44F49W8V3S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Challenge14/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -179,7 +166,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44F49W8V3S;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Challenge14/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
