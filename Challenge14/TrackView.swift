@@ -10,7 +10,7 @@ import UIKit
 class TrackView: UIView {
     
     // Subviews
-
+//MARK: NAVBAR
     //UIStackView - NavBarStackView
     let navBarStackView: UIStackView = {
            let view = UIStackView()
@@ -50,7 +50,7 @@ class TrackView: UIView {
         return view
     }()
     
-    
+    //MARK: IMAGEVIEW
     //UIImageView do Album
     let capaMusicaView: UIImageView = {
         let view = UIImageView()
@@ -62,7 +62,7 @@ class TrackView: UIView {
         return view
     }()
     
-    
+    //MARK: INFOSTACKVIEW
     //UIStackView - InfoStackView
     let infoStackView: UIStackView = {
         let view = UIStackView()
@@ -73,7 +73,7 @@ class TrackView: UIView {
         return view
     }()
     
-    //UILabel titulo musica
+    //UILabel titulo musica dentro da InfoStackView
     let tituloMusicaLabel: UILabel = {
         let view = UILabel()
         view.text = "From Me to You"
@@ -83,7 +83,7 @@ class TrackView: UIView {
         return view
     }()
     
-    //UILabel nome Cantor
+    //UILabel nome Cantor dentro da InfoStackView
     let nomeCantorLabel: UILabel = {
         let view = UILabel()
         view.text = "The Beatles"
@@ -102,7 +102,7 @@ class TrackView: UIView {
             return view
         }()
     
-    
+    //MARK: PROGRESSBAR
     //UIProgressBar
     let progressBar: UIProgressView = {
         let view = UIProgressView()
@@ -110,6 +110,7 @@ class TrackView: UIView {
         return view
     }()
     
+    //MARK: BUTTONS PLAY...
     //UIStackView - Buttons
     let buttonStackView: UIStackView = {
            let view = UIStackView()
@@ -164,8 +165,9 @@ class TrackView: UIView {
             return view
         }()
     
-    //aqui contem tres buttons -
+    //MARK: aqui contem tres buttons -
     
+    //MARK: LETRA DA MUSICA
     //UIStackView - Container texto da Letra Musica
     let textLetraMusica: UIStackView = {
         let view = UIStackView()
@@ -186,10 +188,12 @@ class TrackView: UIView {
         return view
     }()
     
+    //MARK: CONECTANDO MODULOS DA VIEW
     override init(frame: CGRect){
         super.init(frame: frame)
         setupBackground()
         setupHierarchy()
+        setupConstraints()
         
     }
     required init?(coder: NSCoder){
@@ -211,8 +215,77 @@ class TrackView: UIView {
         navBarStackView.addArrangedSubview(configButton)
         
         //ImageView
+        addSubview(capaMusicaView)
+        
+        //InfoStackView
+        addSubview(infoStackView)
+        infoStackView.addArrangedSubview(tituloMusicaLabel)
+        infoStackView.addArrangedSubview(nomeCantorLabel)
+        infoStackView.addArrangedSubview(likeButton)
+        
+        //ProgressBar
+        addSubview(progressBar)
+        
+        //Buttons play
+        addSubview(buttonStackView)
+        buttonStackView.addArrangedSubview(shuffleButton)
+        buttonStackView.addArrangedSubview(previousButton)
+        buttonStackView.addArrangedSubview(playPauseButton)
+        buttonStackView.addArrangedSubview(nextButton)
+        buttonStackView.addArrangedSubview(repeatButton)
+        
+        //falta tres buttons aqui.. adicionar depois
+        
+        //Letra da musica
+        addSubview(textLetraMusica)
+        textLetraMusica.addArrangedSubview(letraLabel)
         
         
+    }
+//        .topAnchor       → de onde começa pelo topo
+//        .leadingAnchor   → margem esquerda
+//        .trailingAnchor  → margem direita
+//        .heightAnchor    → altura fixa
+//        .widthAnchor     → largura fixa
+    private func setupConstraints(){
+        NSLayoutConstraint.activate([
+            
+            // NAVBAR
+            navBarStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            navBarStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            navBarStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            navBarStackView.heightAnchor.constraint(equalToConstant: 44),
+
+            // CAPA — proporcional, quadrada
+            capaMusicaView.topAnchor.constraint(equalTo: navBarStackView.bottomAnchor, constant: 24),
+            capaMusicaView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            capaMusicaView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.88),
+            capaMusicaView.heightAnchor.constraint(equalTo: capaMusicaView.widthAnchor),
+
+            // INFO (titulo + artista + like)
+            infoStackView.topAnchor.constraint(equalTo: capaMusicaView.bottomAnchor, constant: 24),
+            infoStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            infoStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            infoStackView.heightAnchor.constraint(equalToConstant: 50),
+
+            // PROGRESS BAR
+            progressBar.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 16),
+            progressBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            progressBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+
+            // BOTOES PLAY
+            buttonStackView.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 24),
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            buttonStackView.heightAnchor.constraint(equalToConstant: 64),
+
+            // LETRA
+            textLetraMusica.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 24),
+            textLetraMusica.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            textLetraMusica.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            textLetraMusica.heightAnchor.constraint(equalToConstant: 50),
+            textLetraMusica.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
+        ])
     }
 
 }

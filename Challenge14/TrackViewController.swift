@@ -9,9 +9,15 @@ import UIKit
 
 class TrackViewController: UIViewController {
     
+    private let trackViwe = TrackView()
+    
+    override func loadView() {
+        self.view = trackViwe
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
     }
+    
 }
