@@ -9,10 +9,10 @@ import UIKit
 
 class TrackViewController: UIViewController {
     
-    private let trackViwe = TrackView()
+    private let trackView = TrackView()
     
     override func loadView() {
-        self.view = trackViwe
+        self.view = trackView
     }
     
     override func viewDidLoad() {
