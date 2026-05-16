@@ -30,7 +30,7 @@ final class AlbumDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("📋 viewDidLoad — Configuração inicial (chamado 1x)")
+        print("viewDidLoad — Configuração inicial (chamado 1x)")
 
         setupBackground()
         embedSwiftUIView()
@@ -41,7 +41,7 @@ final class AlbumDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        print("👀 viewWillAppear — A view vai aparecer (chamado toda vez)")
+        print("viewWillAppear — A view vai aparecer (chamado toda vez)")
 
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -50,28 +50,28 @@ final class AlbumDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        print("✅ viewDidAppear — A view já está visível na tela")
+        print("viewDidAppear — A view já está visível na tela")
     }
 
     // Chamado quando a tela vai sair. Bom pra pausar coisas (música, timers).
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        print("⏸️ viewWillDisappear — A view vai desaparecer")
+        print("viewWillDisappear — A view vai desaparecer")
     }
 
     // Chamado quando a tela já saiu. Bom pra liberar recursos pesados.
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        print("🚪 viewDidDisappear — A view saiu da tela")
+        print("viewDidDisappear — A view saiu da tela")
     }
 
     // Chamado toda vez que o Auto Layout recalcula as posições.
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        print("📐 viewDidLayoutSubviews — Layout recalculado (bounds: \(view.bounds.size))")
+        print("viewDidLayoutSubviews — Layout recalculado (bounds: \(view.bounds.size))")
 
         // CAGradientLayer não usa Auto Layout, então atualizamos o frame manualmente.
         if let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer {
@@ -87,7 +87,7 @@ final class AlbumDetailViewController: UIViewController {
     ) {
         super.viewWillTransition(to: size, with: coordinator)
 
-        print("🔄 viewWillTransition — Novo tamanho: \(size)")
+        print("viewWillTransition — Novo tamanho: \(size)")
 
         coordinator.animate { _ in
             self.view.layoutIfNeeded()
@@ -157,7 +157,7 @@ final class AlbumDetailViewController: UIViewController {
             registerForTraitChanges(
                 [UITraitHorizontalSizeClass.self, UITraitLayoutDirection.self]
             ) { (self: Self, previousTraitCollection: UITraitCollection) in
-                print("🎨 traitChanges — Traits atualizados")
+                print("traitChanges — Traits atualizados")
                 print("   → Size class: \(self.traitCollection.horizontalSizeClass.description)")
                 print("   → Layout direction: \(self.traitCollection.layoutDirection == .rightToLeft ? "RTL" : "LTR")")
             }
