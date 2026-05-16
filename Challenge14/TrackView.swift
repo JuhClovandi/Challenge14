@@ -98,7 +98,7 @@ class TrackView: UIView {
         let view = UILabel()
         view.text = "The Beatles"
         view.font = .systemFont(ofSize: 14, weight: .regular)
-        view.textColor = .systemGray
+        view.textColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -107,7 +107,7 @@ class TrackView: UIView {
     let likeButton: UIButton = {
             let view = UIButton()
             view.setImage(UIImage(systemName: "heart"), for: .normal)
-            view.tintColor = .systemGray
+            view.tintColor = .white
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()
@@ -135,7 +135,7 @@ class TrackView: UIView {
     let shuffleButton: UIButton = {
             let view = UIButton()
             let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
-        view.setImage(UIImage(systemName: "shuffle", withConfiguration: conf, for: .normal)
+        view.setImage(UIImage(systemName: "shuffle", withConfiguration: conf), for: .normal)
             view.tintColor = .white
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
@@ -144,7 +144,8 @@ class TrackView: UIView {
     //UIStackView - botao de voltar musica
     let previousButton: UIButton = {
             let view = UIButton()
-            view.setImage(UIImage(systemName: "backward.end.fill"), for: .normal)
+        let conf = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
+            view.setImage(UIImage(systemName: "backward.end.fill", withConfiguration: conf), for: .normal)
             view.tintColor = .white
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
@@ -153,7 +154,8 @@ class TrackView: UIView {
     //UIStackView - botao de play musica
     let playPauseButton: UIButton = {
             let view = UIButton()
-            view.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+        let config = UIImage.SymbolConfiguration(pointSize: 65, weight: .regular)
+            view.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: config), for: .normal)
             view.tintColor = .white
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
@@ -162,7 +164,8 @@ class TrackView: UIView {
     //UIStackView - avançar musica
     let nextButton: UIButton = {
            let view = UIButton()
-           view.setImage(UIImage(systemName: "forward.end.fill"), for: .normal)
+        let conf = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
+           view.setImage(UIImage(systemName: "forward.end.fill", withConfiguration: conf), for: .normal)
            view.tintColor = .white
            view.translatesAutoresizingMaskIntoConstraints = false
            return view
@@ -171,8 +174,9 @@ class TrackView: UIView {
     //UIStackView - repetir musica
     let repeatButton: UIButton = {
             let view = UIButton()
-            view.setImage(UIImage(systemName: "repeat"), for: .normal)
-            view.tintColor = .white
+        let conf = UIImage.SymbolConfiguration(pointSize: 25, weight: .regular)
+            view.setImage(UIImage(systemName: "repeat", withConfiguration: conf), for: .normal)
+            view.tintColor = .green
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()
@@ -215,7 +219,7 @@ class TrackView: UIView {
     let textBluetooth: UILabel = {
         let label = UILabel()
         label.text = "BEATSPILL+"
-        label.textColor = .white
+        label.textColor = .green
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -235,7 +239,8 @@ class TrackView: UIView {
     //button de compartilhar
     let sharedButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
+        view.setImage(UIImage(systemName: "square.and.arrow.up", withConfiguration: conf), for: .normal)
         view.tintColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -244,7 +249,8 @@ class TrackView: UIView {
     //butto de list
     let listButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+        let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
+        view.setImage(UIImage(systemName: "list.bullet", withConfiguration: conf), for: .normal)
         view.tintColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
