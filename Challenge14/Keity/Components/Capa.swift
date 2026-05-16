@@ -12,7 +12,7 @@ class Capa: UIView {
     //UIImageView do Album
     let capaMusicaView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .systemGray4
+        view.image = AppImages.capa
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false// é obrigatório, sem ele o Auto Layout não funciona.
         return view

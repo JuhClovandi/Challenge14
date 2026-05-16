@@ -32,9 +32,9 @@ class InfoRow: UIView {
     //UILabel titulo musica dentro da InfoStackView
     let tituloMusicaLabel: UILabel = {
         let view = UILabel()
-        view.text = "From Me to You"
-        view.font = .systemFont(ofSize: 18, weight: .bold)
-        view.textColor = .white
+        view.text = "From Me to You - Mono / Remast"
+        view.font = AppFonts.trackTitle
+        view.textColor = AppColors.primaryText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -43,8 +43,8 @@ class InfoRow: UIView {
     let nomeCantorLabel: UILabel = {
         let view = UILabel()
         view.text = "The Beatles"
-        view.font = .systemFont(ofSize: 14, weight: .regular)
-        view.textColor = .white
+        view.font = AppFonts.albumName
+        view.textColor = AppColors.primaryText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -52,8 +52,8 @@ class InfoRow: UIView {
     //InfoStackView - button de like
     let likeButton: UIButton = {
             let view = UIButton()
-            view.setImage(UIImage(systemName: "heart"), for: .normal)
-            view.tintColor = .white
+            view.setImage(AppImages.heart, for: .normal)
+            view.tintColor = AppColors.primaryText
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()

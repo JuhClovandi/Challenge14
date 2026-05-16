@@ -23,8 +23,8 @@ class Lyrics: UIView {
     let letraLabel: UILabel = {
         let view = UILabel()
         view.text = "Lyrics"
-        view.font = .systemFont(ofSize: 14, weight: .semibold)
-        view.textColor = .white
+        view.font = AppFonts.lyrics
+        view.textColor = AppColors.primaryText
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

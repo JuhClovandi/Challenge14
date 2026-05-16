@@ -30,11 +30,7 @@ class FooterView: UIView {
    //button de bluetooth
     let bluetoothButton: UIButton = {
         let view = UIButton()
-
-        let image = UIImage(
-            named: "bluetooth"
-            )
-        view.setImage(image, for: .normal)
+        view.setImage(AppImages.bluetooth, for: .normal)
         view.imageView?.contentMode = .scaleAspectFit
         view.contentVerticalAlignment = .fill
         view.contentHorizontalAlignment = .fill
@@ -46,8 +42,8 @@ class FooterView: UIView {
     let textBluetooth: UILabel = {
         let label = UILabel()
         label.text = "BEATSPILL+"
-        label.textColor = .green
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = AppFonts.bluetooth
+        label.textColor = AppColors.destach
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -66,9 +62,8 @@ class FooterView: UIView {
     //button de compartilhar
     let sharedButton: UIButton = {
         let view = UIButton()
-        let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
-        view.setImage(UIImage(systemName: "square.and.arrow.up", withConfiguration: conf), for: .normal)
-        view.tintColor = .white
+        view.setImage(AppImages.share, for: .normal)
+        view.tintColor = AppColors.icon
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -76,9 +71,8 @@ class FooterView: UIView {
     //butto de list
     let listButton: UIButton = {
         let view = UIButton()
-        let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
-        view.setImage(UIImage(systemName: "list.bullet", withConfiguration: conf), for: .normal)
-        view.tintColor = .white
+        view.setImage(AppImages.list, for: .normal)
+        view.tintColor = AppColors.icon
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

@@ -12,6 +12,7 @@ class ProgressBar: UIView {
     let progressBar: UIProgressView = {
         let view = UIProgressView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.tintColor = AppColors.primaryText
         return view
     }()
     

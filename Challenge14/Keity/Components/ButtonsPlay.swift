@@ -11,63 +11,58 @@ class ButtonsPlay: UIView{
     
     //UIStackView - Buttons
     let buttonStackView: UIStackView = {
-           let view = UIStackView()
-           view.axis = .horizontal
-           view.distribution = .equalSpacing
-           view.alignment = .center
-           view.translatesAutoresizingMaskIntoConstraints = false
-           return view
-       }()
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .equalSpacing
+        view.alignment = .center
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //UIStackView - botao de ordem aleatoria
     let shuffleButton: UIButton = {
-            let view = UIButton()
-            let conf = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
-        view.setImage(UIImage(systemName: "shuffle", withConfiguration: conf), for: .normal)
-            view.tintColor = .white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        let view = UIButton()
+        view.setImage(AppImages.shuffle, for: .normal)
+        view.tintColor = AppColors.icon
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //UIStackView - botao de voltar musica
     let previousButton: UIButton = {
-            let view = UIButton()
-        let conf = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
-            view.setImage(UIImage(systemName: "backward.end.fill", withConfiguration: conf), for: .normal)
-            view.tintColor = .white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        let view = UIButton()
+        view.setImage(AppImages.previous, for: .normal)
+        view.tintColor = AppColors.icon
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //UIStackView - botao de play musica
     let playPauseButton: UIButton = {
-            let view = UIButton()
-        let config = UIImage.SymbolConfiguration(pointSize: 65, weight: .regular)
-            view.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: config), for: .normal)
-            view.tintColor = .white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        let view = UIButton()
+        view.setImage(AppImages.playPause, for: .normal)
+        view.tintColor = AppColors.icon
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //UIStackView - avançar musica
     let nextButton: UIButton = {
-           let view = UIButton()
-        let conf = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular)
-           view.setImage(UIImage(systemName: "forward.end.fill", withConfiguration: conf), for: .normal)
-           view.tintColor = .white
-           view.translatesAutoresizingMaskIntoConstraints = false
-           return view
-       }()
+        let view = UIButton()
+        view.setImage(AppImages.next, for: .normal)
+        view.tintColor = AppColors.icon
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     //UIStackView - repetir musica
     let repeatButton: UIButton = {
-            let view = UIButton()
-        let conf = UIImage.SymbolConfiguration(pointSize: 25, weight: .regular)
-            view.setImage(UIImage(systemName: "repeat", withConfiguration: conf), for: .normal)
-            view.tintColor = .green
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        let view = UIButton()
+        view.setImage(AppImages.repeatIcon, for: .normal)
+        view.tintColor = AppColors.accent
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override init(frame: CGRect){
         super.init(frame: frame)

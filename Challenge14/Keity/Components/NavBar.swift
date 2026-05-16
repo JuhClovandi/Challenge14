@@ -20,8 +20,8 @@ class NavBar: UIView {
         //UIButton dentro da NavBar - voltar
         let voltarButton: UIButton = {
                 let view = UIButton()
-                view.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-                view.tintColor = .white
+                view.setImage(AppImages.chevronDown, for: .normal)
+                view.tintColor = AppColors.primaryText
                 view.translatesAutoresizingMaskIntoConstraints = false
                 return view
             }()
@@ -31,8 +31,8 @@ class NavBar: UIView {
         let nomeAlbumLabel: UILabel = {
                 let view = UILabel()
                 view.text = "1 (Remastered)"
-                view.font = .systemFont(ofSize: 13, weight: .semibold)
-                view.textColor = .white
+                view.font = AppFonts.trackTitle
+                view.textColor = AppColors.primaryText
                 view.translatesAutoresizingMaskIntoConstraints = false
                 return view
             }()
@@ -40,8 +40,8 @@ class NavBar: UIView {
         //UIButton dentro da NavBar - tres pontinhos
         let configButton: UIButton = {
             let view = UIButton()
-            view.setImage(UIImage(systemName: "ellipsis"), for: .normal)
-            view.tintColor = .white
+            view.setImage(AppImages.ellipsis, for: .normal)
+            view.tintColor = AppColors.primaryText
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()
