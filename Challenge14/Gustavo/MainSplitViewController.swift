@@ -52,7 +52,7 @@ class MainSplitViewController: UISplitViewController {
                 musicPlayer.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16),
                 musicPlayer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
                 musicPlayer.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-                musicPlayer.heightAnchor.constraint(equalToConstant: 500)
+                musicPlayer.heightAnchor.constraint(greaterThanOrEqualToConstant: 500)
             ])
     }
 }

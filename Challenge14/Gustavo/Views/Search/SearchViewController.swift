@@ -14,6 +14,10 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
     private let playerView = MusicPlayerCardView()
     private let headerView = HeaderSearchView()
     
+    // Constraints de altura dinâmicas
+    private var headerHeightConstraint: NSLayoutConstraint!
+    private var searchBarHeightConstraint: NSLayoutConstraint!
+    
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -43,20 +47,21 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
     }
         
     func setupConstraints() {
+        // Inicializa as constraints de altura com os valores escalados
+        headerHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: scaledHeaderHeight())
+        searchBarHeightConstraint = searchBar.heightAnchor.constraint(equalToConstant: scaledSearchHeight())
+        
         NSLayoutConstraint.activate([
-            
-            headerView.heightAnchor.constraint(equalToConstant: 44),
+            headerHeightConstraint,
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            
-            // search bar colada no topo e laterais(safe area)
+            searchBarHeightConstraint,
             searchBar.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16),
             searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            // collectionView colada embaixo da search bar
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 16),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -65,30 +70,59 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             playerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
-            playerView.heightAnchor.constraint(equalToConstant: 60)
+            playerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
     }
         
     func applyAdditionalChanges() {
         view.backgroundColor = .systemBackground
-        collectionView.dataSource = self // avisar para a collectionview que a searchviewcontroller é a fonte de dado
+        collectionView.dataSource = self
         
         let isIpad = traitCollection.horizontalSizeClass == .regular
         playerView.isHidden = isIpad
-        
         updateScrollInsets(isIpad: isIpad)
         
         headerView.onCameraTapped = { [weak self] in
             self?.cameraButtonTapped()
         }
         
+        // Observador para mudanças no Dynamic Type
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(contentSizeChanged),
+            name: UIContentSizeCategory.didChangeNotification,
+            object: nil
+        )
+    }
+
+    @objc private func contentSizeChanged() {
+        // Atualiza as constraints com os novos valores escalados
+        headerHeightConstraint.constant = scaledHeaderHeight()
+        searchBarHeightConstraint.constant = scaledSearchHeight()
+        view.layoutIfNeeded()
+    }
+
+    private func scaledHeaderHeight() -> CGFloat {
+        return UIFontMetrics(forTextStyle: .title1).scaledValue(for: 44)
+    }
+
+    private func scaledSearchHeight() -> CGFloat {
+        return UIFontMetrics(forTextStyle: .body).scaledValue(for: 45)
     }
     
     private func updateScrollInsets(isIpad: Bool) {
-        // O player tem 60 de altura + 8 de margem inferior + 8 de respiro = 76
-        let bottomInset: CGFloat = isIpad ? 16 : 76
+        if isIpad {
+            let bottomInset: CGFloat = 16
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+            collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+        } else {
+        // Calcula a altura real do player baseada no conteúdo interno (Dynamic Type)
+        let playerSize = playerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            let bottomInset = playerSize.height + 16 // Altura do player + margem inferior + respiro
+        
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
         collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+        }
     }
 
     @objc private func cameraButtonTapped() {
@@ -121,24 +155,41 @@ extension SearchViewController {
     func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnv) -> NSCollectionLayoutSection? in
             let isIpad = layoutEnv.traitCollection.horizontalSizeClass == .regular
-            let columns = isIpad ? 4 : 2
+            let isAccessibilitySize = layoutEnv.traitCollection.preferredContentSizeCategory.isAccessibilityCategory
+            
+            // Se a fonte for gigante, usamos 1 coluna (card retangular)
+            // Caso contrário, mantemos 2 (iPhone) ou 4 (iPad)
+            let columns: Int
+            if isAccessibilitySize && !isIpad{
+                columns = 1
+            } else {
+                columns = isIpad ? 4 : 2
+            }
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / CGFloat(columns)),
                                                  heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
 
-            let groupHeight = isIpad ? NSCollectionLayoutDimension.fractionalWidth(0.15) : .fractionalWidth(0.32)
+            let groupHeight: NSCollectionLayoutDimension
+            if isAccessibilitySize && !isIpad {
+                groupHeight = .estimated(120)
+            } else {
+                groupHeight = isIpad ? .fractionalWidth(0.15) : .fractionalWidth(0.32)
+            }
             
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
 
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+            // Padding dinâmico entre o título da seção e os cards
+            let sectionTopPadding = UIFontMetrics(forTextStyle: .title3).scaledValue(for: 10)
+            section.contentInsets = NSDirectionalEdgeInsets(top: sectionTopPadding, leading: 10, bottom: 10, trailing: 10)
             
             let headerSize = NSCollectionLayoutSize(
                         widthDimension: .fractionalWidth(1.0),
-                        heightDimension: .absolute(44)
+                        heightDimension: .estimated(44)
                     )
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize,

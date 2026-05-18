@@ -28,6 +28,8 @@ class MusicPlayerCardView: UIView {
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
+        // Garante que o texto seja truncado se não houver espaço
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
 
@@ -38,39 +40,105 @@ class MusicPlayerCardView: UIView {
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
 
+    // MARK: - Stack Views
+
+    private lazy var labelsStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [titleLabel, artistLabel])
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.spacing = 4
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var titleRowStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [labelsStack, addButton])
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 8
+        stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var timeLabelsStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [currentTimeLabel, durationLabel])
+        stack.axis = .horizontal
+        stack.distribution = .equalSpacing
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var progressStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [progressView, timeLabelsStack])
+        stack.axis = .vertical
+        stack.spacing = 6
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var controlsStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [previousButton, playButton, nextButton])
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .equalCentering
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var ipadContentStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+            titleRowStack,
+            progressStack,
+            controlsStack
+        ])
+        stack.axis = .vertical
+        stack.spacing = 20
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     private let previousButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setImage(UIImage(systemName: "backward.fill"), for: .normal)
-        btn.tintColor = .white
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+        let button = UIButton(type: .system)
+        button.setImage(
+            UIImage(systemName: "backward.fill"),
+            for: .normal
+        )
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
-
+    
     private let playButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        btn.tintColor = .white
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
-
+    
     private let nextButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setImage(UIImage(systemName: "forward.fill"), for: .normal)
-        btn.tintColor = .white
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "forward.fill"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
-
+    
     private let addButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
-        btn.tintColor = .white
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
 
     private let currentTimeLabel: UILabel = {
@@ -103,6 +171,19 @@ class MusicPlayerCardView: UIView {
 
     private var defaultConstraints: [NSLayoutConstraint] = []
     private var ipadConstraints: [NSLayoutConstraint] = []
+    private var albumWidthConstraint: NSLayoutConstraint?
+    private var albumHeightConstraint: NSLayoutConstraint?
+    private var previousWidthConstraint: NSLayoutConstraint?
+    private var previousHeightConstraint: NSLayoutConstraint?
+
+    private var nextWidthConstraint: NSLayoutConstraint?
+    private var nextHeightConstraint: NSLayoutConstraint?
+
+    private var addWidthConstraint: NSLayoutConstraint?
+    private var addHeightConstraint: NSLayoutConstraint?
+
+    private var playWidthConstraint: NSLayoutConstraint?
+    private var playHeightConstraint: NSLayoutConstraint?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -110,13 +191,83 @@ class MusicPlayerCardView: UIView {
     }
 
     required init?(coder: NSCoder) { fatalError() }
+    
+    private func scaledImageSize() -> CGFloat {
+        // Escala os 44 pontos base de acordo com o estilo headline
+        return UIFontMetrics(forTextStyle: .headline).scaledValue(for: 44)
+    }
+    
+    private func scaledPlaySize() -> CGFloat {
+        return UIFontMetrics(forTextStyle: .title1).scaledValue(for: 44)
+    }
+    private func scaledControlButtonSize() -> CGFloat {
+        UIFontMetrics(forTextStyle: .title3).scaledValue(for: 24)
+    }
+
+    private func scaledAddButtonSize() -> CGFloat {
+        UIFontMetrics(forTextStyle: .title3).scaledValue(for: 24)
+    }
+    
+    private func updateDynamicTypeLayout() {
+        
+        let controlPointSize = UIFontMetrics(forTextStyle: .body)
+            .scaledValue(for: 18)
+
+        let playPointSize = UIFontMetrics(forTextStyle: .title2)
+            .scaledValue(for: 34)
+
+        let controlConfig = UIImage.SymbolConfiguration(
+            pointSize: controlPointSize,
+            weight: .regular
+        )
+
+        let playConfig = UIImage.SymbolConfiguration(
+            pointSize: playPointSize,
+            weight: .regular
+        )
+
+        previousButton.setPreferredSymbolConfiguration(controlConfig, forImageIn: .normal)
+
+        nextButton.setPreferredSymbolConfiguration(controlConfig, forImageIn: .normal)
+
+        addButton.setPreferredSymbolConfiguration(controlConfig, forImageIn: .normal)
+
+        playButton.setPreferredSymbolConfiguration(playConfig, forImageIn: .normal)
+
+        albumWidthConstraint?.constant = scaledImageSize()
+        albumHeightConstraint?.constant = scaledImageSize()
+
+
+        playWidthConstraint?.constant = scaledPlaySize()
+        playHeightConstraint?.constant = scaledPlaySize()
+
+        invalidateIntrinsicContentSize()
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else {
+            return
+        }
+
+        updateDynamicTypeLayout()
+
+        layoutIfNeeded()
+    }
 
     func configureForIpad() {
         NSLayoutConstraint.deactivate(defaultConstraints)
-        NSLayoutConstraint.activate(ipadConstraints)
+
+        // Monta hierarquia de stacks (só uma vez)
+        if ipadContentStack.superview == nil {
+            addSubview(ipadContentStack)
+        }
+
         backgroundColor = .clear
 
-        // No iPhone os tempos e barra ficam escondidos na barra pequena
         progressView.isHidden = false
         currentTimeLabel.isHidden = false
         durationLabel.isHidden = false
@@ -124,176 +275,80 @@ class MusicPlayerCardView: UIView {
         nextButton.isHidden = false
         addButton.isHidden = false
         
-        playButton.tintColor = .black
-         playButton.backgroundColor = .white
-         playButton.layer.cornerRadius = 28
-         playButton.clipsToBounds = true
+        addButton.setContentHuggingPriority(.required, for: .horizontal)
+        addButton.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
+        labelsStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        labelsStack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+
+        NSLayoutConstraint.activate(ipadConstraints)
     }
 }
 
 extension MusicPlayerCardView: ViewCodeProtocol {
     func buildHierarchy() {
         addSubview(albumImageView)
-        addSubview(titleLabel)
-        addSubview(artistLabel)
-        addSubview(addButton)
-        addSubview(currentTimeLabel)
-        addSubview(durationLabel)
-        addSubview(progressView)
-        addSubview(previousButton)
+        addSubview(labelsStack)
         addSubview(playButton)
-        addSubview(nextButton)
     }
 
     func setupConstraints() {
+        // Inicializa as constraints de tamanho da imagem com o valor escalado
+        let imageSize = scaledImageSize()
+        albumWidthConstraint = albumImageView.widthAnchor.constraint(equalToConstant: imageSize)
+        albumHeightConstraint = albumImageView.heightAnchor.constraint(equalToConstant: imageSize)
+        
+        
         // IPHONE:
         defaultConstraints = [
-            albumImageView.leadingAnchor.constraint(
-                equalTo: leadingAnchor,
-                constant: 8
-            ),
+            // Imagem presa ao topo e fundo para ditar a altura mínima
+            albumImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            albumImageView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 8),
+            albumImageView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8),
             albumImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            albumImageView.widthAnchor.constraint(equalToConstant: 44),
-            albumImageView.heightAnchor.constraint(equalToConstant: 44),
+            albumWidthConstraint!,
+            albumHeightConstraint!,
 
-            titleLabel.leadingAnchor.constraint(
-                equalTo: albumImageView.trailingAnchor,
-                constant: 12
-            ),
-            titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
+            // Stack de labels centralizada verticalmente e presa horizontalmente
+            labelsStack.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: 12),
+            labelsStack.centerYAnchor.constraint(equalTo: centerYAnchor),
+            labelsStack.trailingAnchor.constraint(lessThanOrEqualTo: playButton.leadingAnchor, constant: -12),
+            labelsStack.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 8),
+            labelsStack.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8),
 
-            artistLabel.leadingAnchor.constraint(
-                equalTo: titleLabel.leadingAnchor
-            ),
-            artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-
-            playButton.trailingAnchor.constraint(
-                equalTo: trailingAnchor,
-                constant: -16
-            ),
+            playButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             playButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            playButton.widthAnchor.constraint(equalToConstant: 32),
-            playButton.heightAnchor.constraint(equalToConstant: 32),
+            playButton.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 8),
+            playButton.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
         ]
 
+        
         // IPAD:
+        playWidthConstraint = playButton.widthAnchor.constraint(
+            equalToConstant: scaledPlaySize()
+        )
+
+        playHeightConstraint = playButton.heightAnchor.constraint(
+            equalToConstant: scaledPlaySize()
+        )
+
         ipadConstraints = [
-
-            // ALBUM 
-            albumImageView.topAnchor.constraint(
-                equalTo: topAnchor,
-                constant: 24
-            ),
-            albumImageView.leadingAnchor.constraint(
-                equalTo: leadingAnchor,
-                constant: 12
-            ),
-            albumImageView.trailingAnchor.constraint(
-                equalTo: trailingAnchor,
-                constant: -12
-            ),
-            albumImageView.heightAnchor.constraint(
-                equalTo: albumImageView.widthAnchor  // quadrada
-            ),
-
-            // TÍTULO 
-            titleLabel.topAnchor.constraint(
-                equalTo: albumImageView.bottomAnchor,
-                constant: 16
-            ),
-            titleLabel.leadingAnchor.constraint(
-                equalTo: albumImageView.leadingAnchor
-            ),
-            titleLabel.trailingAnchor.constraint(
-                lessThanOrEqualTo: addButton.leadingAnchor,
-                constant: -8
-            ),
-
-            // BOTÃO +
-            addButton.centerYAnchor.constraint(
-                equalTo: titleLabel.centerYAnchor
-            ),
-            addButton.trailingAnchor.constraint(
-                equalTo: albumImageView.trailingAnchor
-            ),
-            addButton.widthAnchor.constraint(equalToConstant: 28),
-            addButton.heightAnchor.constraint(equalToConstant: 28),
-
-            // ARTISTA 
-            artistLabel.topAnchor.constraint(
-                equalTo: titleLabel.bottomAnchor,
-                constant: 4
-            ),
-            artistLabel.leadingAnchor.constraint(
-                equalTo: titleLabel.leadingAnchor
-            ),
-
-            // PROGRESS VIEW
-            progressView.topAnchor.constraint(
-                equalTo: artistLabel.bottomAnchor,
-                constant: 16
-            ),
-            progressView.leadingAnchor.constraint(
-                equalTo: albumImageView.leadingAnchor
-            ),
-            progressView.trailingAnchor.constraint(
-                equalTo: albumImageView.trailingAnchor
-            ),
-
-            // TEMPO ATUAL
-            currentTimeLabel.topAnchor.constraint(
-                equalTo: progressView.bottomAnchor,
-                constant: 6
-            ),
-            currentTimeLabel.leadingAnchor.constraint(
-                equalTo: progressView.leadingAnchor
-            ),
-
-            // DURAÇÃO TOTAL
-            durationLabel.centerYAnchor.constraint(
-                equalTo: currentTimeLabel.centerYAnchor
-            ),
-            durationLabel.trailingAnchor.constraint(
-                equalTo: progressView.trailingAnchor
-            ),
-
-            // PLAY
-            playButton.topAnchor.constraint(
-                equalTo: currentTimeLabel.bottomAnchor,
-                constant: 20
-            ),
-            playButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            playButton.widthAnchor.constraint(equalToConstant: 56),
-            playButton.heightAnchor.constraint(equalToConstant: 56),
-
-            // PREVIOUS
-            previousButton.centerYAnchor.constraint(
-                equalTo: playButton.centerYAnchor
-            ),
-            previousButton.trailingAnchor.constraint(
-                equalTo: playButton.leadingAnchor,
-                constant: -36
-            ),
-            previousButton.widthAnchor.constraint(equalToConstant: 32),
-            previousButton.heightAnchor.constraint(equalToConstant: 32),
-
-            // NEXT
-            nextButton.centerYAnchor.constraint(
-                equalTo: playButton.centerYAnchor
-            ),
-            nextButton.leadingAnchor.constraint(
-                equalTo: playButton.trailingAnchor,
-                constant: 36
-            ),
-            nextButton.widthAnchor.constraint(equalToConstant: 32),
-            nextButton.heightAnchor.constraint(equalToConstant: 32),
+            
+            albumImageView.topAnchor.constraint(equalTo: topAnchor, constant: 24),
+            albumImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            albumImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            albumImageView.heightAnchor.constraint(equalTo: albumImageView.widthAnchor),
+            
+            ipadContentStack.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: 16),
+            ipadContentStack.leadingAnchor.constraint(equalTo: albumImageView.leadingAnchor),
+            ipadContentStack.trailingAnchor.constraint(equalTo: albumImageView.trailingAnchor),
+            ipadContentStack.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -24),
+            
+            playWidthConstraint!,
+            playHeightConstraint!,
+            
+            progressView.heightAnchor.constraint(greaterThanOrEqualToConstant: 4),
         ]
-
-        NSLayoutConstraint.activate(defaultConstraints)
-        [
-            progressView, currentTimeLabel, durationLabel, previousButton,
-            nextButton, addButton,
-        ].forEach { $0.isHidden = true }
 
     }
 
@@ -301,5 +356,21 @@ extension MusicPlayerCardView: ViewCodeProtocol {
         backgroundColor = UIColor(white: 0.1, alpha: 1.0)
         layer.cornerRadius = 8
         translatesAutoresizingMaskIntoConstraints = false
+        
+        [
+            previousButton,
+            playButton,
+            nextButton,
+            addButton
+        ].forEach {
+            $0.setContentCompressionResistancePriority(.required, for: .horizontal)
+            $0.setContentCompressionResistancePriority(.required, for: .vertical)
+
+            $0.setContentHuggingPriority(.required, for: .horizontal)
+            $0.setContentHuggingPriority(.required, for: .vertical)
+        }
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        artistLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        updateDynamicTypeLayout()
     }
 }

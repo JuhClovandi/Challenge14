@@ -66,8 +66,9 @@ extension HeaderSearchView: ViewCodeProtocol{
             
             cameraButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             cameraButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cameraButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 56),
-            cameraButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 56),
+            // Permitimos que o botão cresça conforme o ícone escala
+            cameraButton.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 8),
+            cameraButton.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
         ])
     }
     
