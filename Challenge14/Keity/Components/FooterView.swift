@@ -44,6 +44,7 @@ class FooterView: UIView {
         label.text = "BEATSPILL+"
         label.font = AppFonts.bluetooth
         label.textColor = AppColors.destach
+        label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

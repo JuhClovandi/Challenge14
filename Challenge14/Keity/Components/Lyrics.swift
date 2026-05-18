@@ -25,6 +25,7 @@ class Lyrics: UIView {
         view.text = "Lyrics"
         view.font = AppFonts.lyrics
         view.textColor = AppColors.primaryText
+        view.adjustsFontForContentSizeCategory = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

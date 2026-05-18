@@ -33,6 +33,7 @@ class NavBar: UIView {
                 view.text = "1 (Remastered)"
                 view.font = AppFonts.trackTitle
                 view.textColor = AppColors.primaryText
+                view.adjustsFontForContentSizeCategory = true
                 view.translatesAutoresizingMaskIntoConstraints = false
                 return view
             }()

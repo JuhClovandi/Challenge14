@@ -35,6 +35,7 @@ class InfoRow: UIView {
         view.text = "From Me to You - Mono / Remast"
         view.font = AppFonts.trackTitle
         view.textColor = AppColors.primaryText
+        view.adjustsFontForContentSizeCategory = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -45,6 +46,7 @@ class InfoRow: UIView {
         view.text = "The Beatles"
         view.font = AppFonts.albumName
         view.textColor = AppColors.primaryText
+        view.adjustsFontForContentSizeCategory = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
