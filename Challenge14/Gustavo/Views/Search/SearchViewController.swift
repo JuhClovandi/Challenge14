@@ -70,23 +70,29 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             playerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
-            playerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
-        ])
+            playerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 64)
+         ])
     }
         
     func applyAdditionalChanges() {
         view.backgroundColor = .systemBackground
         collectionView.dataSource = self
-        
+
         let isIpad = traitCollection.horizontalSizeClass == .regular
-        playerView.isHidden = isIpad
+
+        if isIpad {
+            playerView.isHidden = true
+        } else {
+            playerView.isHidden = false
+            playerView.configureForIphone()
+        }
+
         updateScrollInsets(isIpad: isIpad)
-        
+
         headerView.onCameraTapped = { [weak self] in
             self?.cameraButtonTapped()
         }
-        
-        // Observador para mudanças no Dynamic Type
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(contentSizeChanged),
@@ -116,12 +122,11 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
             collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
         } else {
-        // Calcula a altura real do player baseada no conteúdo interno (Dynamic Type)
-        let playerSize = playerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-            let bottomInset = playerSize.height + 16 // Altura do player + margem inferior + respiro
-        
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
-        collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+            // Calcula a altura real do player baseada no conteúdo interno (Dynamic Type)
+            let playerSize = playerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            let bottomInset = playerSize.height + 16
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+            collectionView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
         }
     }
 
@@ -138,9 +143,18 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+
         if traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
+
             let isIpad = traitCollection.horizontalSizeClass == .regular
-            playerView.isHidden = isIpad
+
+            if isIpad {
+                playerView.isHidden = true
+            } else {
+                playerView.isHidden = false
+                playerView.configureForIphone()
+            }
+
             updateScrollInsets(isIpad: isIpad)
         }
     }
