@@ -33,14 +33,29 @@ class TrackView: UIView {
         backgroundColor = AppColors.background
     }
     
+    let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    
+    let contentView: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
     private func setupHierarchy() {
-        addSubview(navBar)
-        addSubview(capa)
-        addSubview(infoRow)
-        addSubview(progress)
-        addSubview(buttonsPlay)
-        addSubview(footer)
-        addSubview(lyrics)
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(navBar)
+        contentView.addSubview(capa)
+        contentView.addSubview(infoRow)
+        contentView.addSubview(progress)
+        contentView.addSubview(buttonsPlay)
+        contentView.addSubview(footer)
+        contentView.addSubview(lyrics)
     }
     
     private func setupConstraints() {
@@ -48,49 +63,63 @@ class TrackView: UIView {
         capaWidthConstraint = widthConstraint
         
         NSLayoutConstraint.activate([
+            
+            // SCROLLVIEW
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            // CONTENTVIEW — mesma largura do scroll (só rola vertical)
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            
             // NAVBAR
-            navBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
-            navBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            navBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            navBar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            navBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            navBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             navBar.heightAnchor.constraint(equalToConstant: 44),
             
             // CAPA
             capa.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 24),
-            capa.centerXAnchor.constraint(equalTo: centerXAnchor),
+            capa.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             widthConstraint,
             capa.heightAnchor.constraint(equalTo: capa.widthAnchor),
             
             // INFO ROW
             infoRow.topAnchor.constraint(equalTo: capa.bottomAnchor, constant: 24),
-            infoRow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            infoRow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-            infoRow.heightAnchor.constraint(equalToConstant: 50),
+            infoRow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            infoRow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            infoRow.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
             
             // PROGRESS BAR
             progress.topAnchor.constraint(equalTo: infoRow.bottomAnchor, constant: 16),
-            progress.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            progress.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            progress.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            progress.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             
             // BOTOES PLAY
             buttonsPlay.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 24),
-            buttonsPlay.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            buttonsPlay.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            buttonsPlay.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            buttonsPlay.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             buttonsPlay.heightAnchor.constraint(equalToConstant: 64),
             
             // FOOTER
             footer.topAnchor.constraint(equalTo: buttonsPlay.bottomAnchor, constant: 24),
-            footer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            footer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            footer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            footer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             footer.heightAnchor.constraint(equalToConstant: 60),
             footer.bluetoothButton.heightAnchor.constraint(equalToConstant: 30),
             footer.bluetoothButton.widthAnchor.constraint(equalToConstant: 30),
             
-            // LYRICS
+            // LYRICS — bottomAnchor fecha o contentView (essencial pro scroll saber o tamanho)
             lyrics.topAnchor.constraint(equalTo: footer.bottomAnchor, constant: 16),
-            lyrics.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            lyrics.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            lyrics.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            lyrics.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             lyrics.heightAnchor.constraint(equalToConstant: 50),
-            lyrics.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            lyrics.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32),
         ])
     }
     
@@ -99,18 +128,18 @@ class TrackView: UIView {
         updateCapaLayout()
     }
     
-//    override func updateConstraints() {
-//        // ajustar constraints dinâmicas
-//        super.updateConstraints()
-//    }
+    //    override func updateConstraints() {
+    //        // ajustar constraints dinâmicas
+    //        super.updateConstraints()
+    //    }
     
     private func updateCapaLayout() {
         let isLandscape = bounds.width > bounds.height
         let availableWidth = max(bounds.width - 64, 0)
         print(" bounds: \(bounds), isLandscape: \(isLandscape), imageWidth: \(isLandscape ? availableWidth * 0.30 : availableWidth * 0.88)")
         // portrait: largura quase total, landscape: pequena à esquerda
-            capaWidthConstraint?.constant = isLandscape ? availableWidth * 0.30 : availableWidth * 0.88
-    
+        capaWidthConstraint?.constant = isLandscape ? availableWidth * 0.30 : availableWidth * 0.88
+        
     }
     
     

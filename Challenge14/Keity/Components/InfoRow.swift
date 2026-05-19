@@ -33,6 +33,8 @@ class InfoRow: UIView {
     let tituloMusicaLabel: UILabel = {
         let view = UILabel()
         view.text = "From Me to You - Mono / Remast"
+        view.numberOfLines = 0
+        view.lineBreakMode = .byWordWrapping
         view.font = AppFonts.trackTitle
         view.textColor = AppColors.primaryText
         view.adjustsFontForContentSizeCategory = true
