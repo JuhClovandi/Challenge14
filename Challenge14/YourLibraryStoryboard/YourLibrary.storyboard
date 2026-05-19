@@ -57,11 +57,11 @@
                                                             <constraint firstAttribute="height" constant="52" id="OwM-eH-NAS"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayg-Ew-hd9" userLabel="FilterStack">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayg-Ew-hd9" userLabel="FilterStack">
                                                         <rect key="frame" x="0.0" y="76" width="393" height="32"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94h-3l-FEg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70.333333333333329" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
                                                                 <color key="backgroundColor" white="0.12938850308641975" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Playlists" cornerStyle="capsule">
@@ -70,7 +70,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcG-uc-CHh">
-                                                                <rect key="frame" x="75.333333333333314" y="0.0" width="94.666666666666686" height="32"/>
+                                                                <rect key="frame" x="87" y="0.0" width="71" height="32"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Artists" cornerStyle="capsule">
@@ -79,7 +79,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRW-eP-Ern">
-                                                                <rect key="frame" x="175" y="0.0" width="63.666666666666657" height="32"/>
+                                                                <rect key="frame" x="163" y="0.0" width="70" height="32"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Album" cornerStyle="capsule">
@@ -88,7 +88,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zI-pg-CQ3">
-                                                                <rect key="frame" x="243.66666666666666" y="0.0" width="94.333333333333343" height="32"/>
+                                                                <rect key="frame" x="238.00000000000003" y="0.0" width="88.333333333333343" height="32"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Podcasts" cornerStyle="capsule">
@@ -97,7 +97,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-2Y-0iv">
-                                                                <rect key="frame" x="343" y="0.0" width="50" height="32"/>
+                                                                <rect key="frame" x="331.33333333333331" y="0.0" width="61.666666666666686" height="32"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -466,6 +466,30 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Cp3-3B-b5b" secondAttribute="trailing" constant="1" id="x5v-68-KXD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumButton" destination="BRW-eP-Ern" id="d5O-UD-ILs"/>
+                        <outlet property="arrowIcon" destination="bl5-Z3-OnM" id="EEi-nK-7Di"/>
+                        <outlet property="artistsButton" destination="XcG-uc-CHh" id="DhK-8b-iTh"/>
+                        <outlet property="contentView" destination="ZxN-VJ-HtZ" id="3ng-Q7-5JU"/>
+                        <outlet property="gridIcon" destination="zz3-g9-Rgp" id="UAr-hG-cmG"/>
+                        <outlet property="homeImg" destination="TKa-yv-LrR" id="NRI-MB-z6T"/>
+                        <outlet property="libraryImg" destination="6Il-Ho-Kbs" id="imz-x6-I0U"/>
+                        <outlet property="playlistsButton" destination="94h-3l-FEg" id="zMf-eO-dY6"/>
+                        <outlet property="plusButton" destination="MD8-SY-xPW" id="Yc8-R3-uGu"/>
+                        <outlet property="podcastsButton" destination="6zI-pg-CQ3" id="26P-W9-nUM"/>
+                        <outlet property="profileImage" destination="KvA-J1-JCA" id="zHo-Sh-cOr"/>
+                        <outlet property="rowImg1" destination="3wX-Sn-vxd" id="phF-ki-1nA"/>
+                        <outlet property="rowImg2" destination="UAy-un-RDO" id="PQI-zi-WOz"/>
+                        <outlet property="rowImg3" destination="Zqg-fA-67y" id="qWz-FL-I1m"/>
+                        <outlet property="rowImg4" destination="tzl-Ar-0eG" id="iuC-MC-ETc"/>
+                        <outlet property="rowImg5" destination="2Kv-Xn-y6g" id="Pe5-f1-9x0"/>
+                        <outlet property="rowImg6" destination="xcp-fK-QZ4" id="e1b-7G-GhO"/>
+                        <outlet property="rowImg7" destination="Vq7-V1-DyK" id="f9F-Xi-HKA"/>
+                        <outlet property="scrollView" destination="aXV-3n-4cL" id="9tS-hM-12M"/>
+                        <outlet property="searchImg" destination="TVn-7N-ZIO" id="ZqW-5w-MPR"/>
+                        <outlet property="stackView" destination="K6M-JM-7n3" id="PJu-4S-MCN"/>
+                        <outlet property="tabStack" destination="Cp3-3B-b5b" id="aUa-cS-uOu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
