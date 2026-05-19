@@ -14,13 +14,14 @@ class HeaderSearchView: UIView{
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Search"
+        label.text = NSLocalizedString("Search", comment: "")
         if let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .title1).withSymbolicTraits(.traitBold) {
             label.font = UIFont(descriptor: descriptor, size: 0) // size 0 mantém o tamanho dinâmico do estilo
         }
         label.adjustsFontForContentSizeCategory = true
-        label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
+        label.textAlignment = .natural
+        label.accessibilityTraits = .header
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,6 +31,7 @@ class HeaderSearchView: UIView{
         let config = UIImage.SymbolConfiguration(textStyle: .title1, scale: .medium)
         button.setImage(UIImage(systemName: "camera", withConfiguration: config), for: .normal)
         button.tintColor = .white
+        button.accessibilityLabel = NSLocalizedString("Camera", comment: "")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

@@ -14,10 +14,13 @@ class SectionHeaderView: UICollectionReusableView{
     private let titleLabel: UILabel = {
         let label = UILabel()
         if let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .title2).withSymbolicTraits(.traitBold) {
-                label.font = UIFont(descriptor: descriptor, size: 0) // size 0 mantém o tamanho dinâmico do estilo
+                label.font = UIFont(descriptor: descriptor, size: 0)
             }
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
+        // RTL: .natural acompanha a direção do idioma
+        label.textAlignment = .natural
+        label.accessibilityTraits = .header
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

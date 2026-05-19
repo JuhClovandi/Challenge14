@@ -45,9 +45,9 @@ class MusicPlayerCardView: UIView {
     private let iPadTitleLabel = SongTitleLabel(style: .title3)
     private let iPadArtistLabel = SongArtistLabel()
     private let iPadPlayButton = PlayButton()
-    private let iPadPreviousButton = ControlButton(systemName: "backward.fill")
-    private let iPadNextButton = ControlButton(systemName: "forward.fill")
-    private let iPadAddButton = ControlButton(systemName: "plus.circle")
+    private let iPadPreviousButton = ControlButton(systemName: "backward.fill", accessibilityLabelText: NSLocalizedString("Previous track", comment: ""))
+    private let iPadNextButton = ControlButton(systemName: "forward.fill", accessibilityLabelText: NSLocalizedString("Next track", comment: ""))
+    private let iPadAddButton = ControlButton(systemName: "plus.circle", accessibilityLabelText: NSLocalizedString("Add to library", comment: ""))
     private let iPadProgressView = MusicProgressView()
     private let iPadCurrentTimeLabel = TimeLabel(text: "1:18")
     private let iPadDurationLabel = TimeLabel(text: "3:53", color: .lightGray)
@@ -277,7 +277,7 @@ private final class AlbumImageView: UIImageView {
 private final class SongTitleLabel: UILabel {
     init(style: UIFont.TextStyle) {
         super.init(frame: .zero)
-        text = "Conexões de Máfia"
+        text = NSLocalizedString("Conexões de Máfia", comment: "")
         font = .preferredFont(forTextStyle: style)
         adjustsFontForContentSizeCategory = true
         textColor = .white
@@ -297,7 +297,7 @@ private final class SongArtistLabel: UILabel {
     required init?(coder: NSCoder) { fatalError() }
 
     private func setup() {
-        text = "Matuê, Rich The Kid"
+        text = NSLocalizedString("Matuê, Rich The Kid", comment: "")
         font = .preferredFont(forTextStyle: .subheadline)
         adjustsFontForContentSizeCategory = true
         textColor = .lightGray
@@ -316,17 +316,19 @@ private final class PlayButton: UIButton {
         setPreferredSymbolConfiguration(config, forImageIn: .normal)
         imageView?.contentMode = .scaleAspectFit
         tintColor = .white
+        accessibilityLabel = NSLocalizedString("Play", comment: "")
         translatesAutoresizingMaskIntoConstraints = false
     }
     required init?(coder: NSCoder) { fatalError() }
 }
 
 private final class ControlButton: UIButton {
-    init(systemName: String) {
+    init(systemName: String, accessibilityLabelText: String) {
         super.init(frame: .zero)
         setImage(UIImage(systemName: systemName), for: .normal)
         imageView?.contentMode = .scaleAspectFit
         tintColor = .white
+        accessibilityLabel = accessibilityLabelText
         translatesAutoresizingMaskIntoConstraints = false
     }
     required init?(coder: NSCoder) { fatalError() }
@@ -344,6 +346,12 @@ private final class MusicProgressView: UIProgressView {
         progress = 0.35
         trackTintColor = UIColor.white.withAlphaComponent(0.18)
         progressTintColor = .white
+        
+        // VoiceOver
+        isAccessibilityElement = true
+        accessibilityLabel = NSLocalizedString("Song progress", comment: "")
+        accessibilityValue = "35%"
+        
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

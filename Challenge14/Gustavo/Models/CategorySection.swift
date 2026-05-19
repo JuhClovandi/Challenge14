@@ -20,17 +20,17 @@ struct CategorySection {
 }
 
 let mockSections: [CategorySection] = [
-    CategorySection(title: "Your top genres", items: [
-        Category(title: "Pop", color: .systemPurple, image: nil),
-        Category(title: "Indie", color: .systemGreen, image: nil),
+    CategorySection(title: NSLocalizedString("Your top genres", comment: ""), items: [
+        Category(title: NSLocalizedString("Pop", comment: ""), color: .systemPurple, image: nil),
+        Category(title: NSLocalizedString("Indie", comment: ""), color: .systemGreen, image: nil),
     ]),
-    CategorySection(title: "Browse all", items: [
-        Category(title: "News & Politics", color: .systemBlue, image: nil),
-        Category(title: "Podcasts", color: .systemIndigo, image: nil),
-        Category(title: "Comedy", color: .systemOrange, image: nil),
-        Category(title: "2021 Wrapped", color: .systemTeal, image: nil),
-        Category(title: "Made For You", color: .systemMint, image: UIImage(named: "albumMatue")),
-        Category(title: "Charts", color: .systemPink, image: nil),
+    CategorySection(title: NSLocalizedString("Browse all", comment: ""), items: [
+        Category(title: NSLocalizedString("News & Politics", comment: ""), color: .systemBlue, image: nil),
+        Category(title: NSLocalizedString("Podcasts", comment: ""), color: .systemIndigo, image: nil),
+        Category(title: NSLocalizedString("Comedy", comment: ""), color: .systemOrange, image: nil),
+        Category(title: NSLocalizedString("2021 Wrapped", comment: ""), color: .systemTeal, image: nil),
+        Category(title: NSLocalizedString("Made For You", comment: ""), color: .systemMint, image: UIImage(named: "albumMatue")),
+        Category(title: NSLocalizedString("Charts", comment: ""), color: .systemPink, image: nil),
     ])
 ]
  

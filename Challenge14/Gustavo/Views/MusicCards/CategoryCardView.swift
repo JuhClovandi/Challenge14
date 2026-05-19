@@ -13,13 +13,13 @@ class CategoryCardView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        // TextStyle garante que a Apple gerencie o tamanho base
         let font = UIFont.preferredFont(forTextStyle: .title3)
-        // Bold customizado que respeita o Dynamic Type
         label.font = UIFontMetrics(forTextStyle: .title3).scaledFont(for: .systemFont(ofSize: 20, weight: .bold))
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
         label.numberOfLines = 0
+        // RTL: .natural acompanha a direção do idioma automaticamente
+        label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,8 +30,7 @@ class CategoryCardView: UIView {
         album.clipsToBounds = true
         album.layer.cornerRadius = 12
         album.translatesAutoresizingMaskIntoConstraints = false
-        // rotação
-        album.transform = CGAffineTransform(rotationAngle: 0.4)
+        // RTL: a rotação será aplicada em applyAdditionalChanges respeitando a direção
         return album
     }()
     
@@ -56,6 +55,16 @@ class CategoryCardView: UIView {
         if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
             updateImageConstraints()
         }
+        // RTL: recalcula a rotação quando a direção muda (ex: mudança de idioma em runtime)
+        if traitCollection.layoutDirection != previousTraitCollection?.layoutDirection {
+            applyImageRotation()
+        }
+    }
+
+    // RTL: rotação simétrica — espelha em RTL para manter a sensação visual correta
+    private func applyImageRotation() {
+        let angle: CGFloat = effectiveUserInterfaceLayoutDirection == .rightToLeft ? -0.4 : 0.4
+        albumImage.transform = CGAffineTransform(rotationAngle: angle)
     }
     
     private func updateImageConstraints() {
@@ -81,8 +90,11 @@ extension CategoryCardView: ViewCodeProtocol{
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: albumImage.leadingAnchor, constant: -8),
-            
+            // RTL: a imagem está anchorada ao trailingAnchor do card e ao trailingAnchor do título.
+            // Em LTR: título à esquerda, imagem à direita.
+            // Em RTL: UIKit espelha automaticamente — título à direita, imagem à esquerda.
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: albumImage.leadingAnchor, constant: -8),
+
             // A MÁGICA: O fundo do card deve estar sempre abaixo do texto (com margem)
             titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -12),
 
@@ -90,13 +102,20 @@ extension CategoryCardView: ViewCodeProtocol{
             albumImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 15),
             albumImage.heightAnchor.constraint(equalTo: albumImage.widthAnchor)
         ])
-        
+
         // Aplica a largura inicial correta
         updateImageConstraints()
     }
-    
+
     func applyAdditionalChanges() {
         layer.cornerRadius = 4
         clipsToBounds = true
+        // RTL: aplica a rotação correta para a direção inicial da interface
+        applyImageRotation()
+        
+        // VoiceOver: O card deve ser lido como um botão único
+        isAccessibilityElement = true
+        accessibilityLabel = titleLabel.text
+        accessibilityTraits = .button
     }
 }

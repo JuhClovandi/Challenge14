@@ -22,10 +22,12 @@ class SearchBarView: UIView {
     
     private let placeholderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Artists, songs or podcasts"
+        label.text = NSLocalizedString("Artists, songs or podcasts", comment: "")
         label.textColor = .darkGray
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
+        // RTL: .natural acompanha a direção do idioma
+        label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -94,5 +96,11 @@ extension SearchBarView: ViewCodeProtocol {
         layer.cornerRadius = 8
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
+        
+        // VoiceOver
+        isAccessibilityElement = true
+        accessibilityLabel = NSLocalizedString("Search", comment: "")
+        accessibilityValue = placeholderLabel.text
+        accessibilityTraits = .searchField
     }
 }
