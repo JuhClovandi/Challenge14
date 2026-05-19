@@ -32,7 +32,10 @@ class InfoRow: UIView {
     //UILabel titulo musica dentro da InfoStackView
     let tituloMusicaLabel: UILabel = {
         let view = UILabel()
+        view.isAccessibilityElement = true
         view.text = "From Me to You - Mono / Remast"
+        view.accessibilityLabel = "From Me to You - Mono / Remast"
+        view.accessibilityTraits = .staticText
         view.numberOfLines = 0
         view.lineBreakMode = .byWordWrapping
         view.font = AppFonts.trackTitle
@@ -45,7 +48,10 @@ class InfoRow: UIView {
     //UILabel nome Cantor dentro da InfoStackView
     let nomeCantorLabel: UILabel = {
         let view = UILabel()
+        view.isAccessibilityElement = true
         view.text = "The Beatles"
+        view.accessibilityLabel = "The Beatles"
+        view.accessibilityTraits = .staticText
         view.font = AppFonts.albumName
         view.textColor = AppColors.primaryText
         view.adjustsFontForContentSizeCategory = true
@@ -58,6 +64,9 @@ class InfoRow: UIView {
             let view = UIButton()
             view.setImage(AppImages.heart, for: .normal)
             view.tintColor = AppColors.primaryText
+            view.isAccessibilityElement = true 
+            view.accessibilityLabel = "Curtir música"
+            view.accessibilityTraits = .button
             view.translatesAutoresizingMaskIntoConstraints = false
             return view
         }()

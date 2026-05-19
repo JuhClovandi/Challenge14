@@ -22,7 +22,10 @@ class Lyrics: UIView {
     //UILabel- letra da muisca
     let letraLabel: UILabel = {
         let view = UILabel()
+        view.isAccessibilityElement = true
         view.text = "Lyrics"
+        view.accessibilityLabel = "Letra da Música"
+        view.accessibilityTraits = .staticText
         view.font = AppFonts.lyrics
         view.textColor = AppColors.primaryText
         view.adjustsFontForContentSizeCategory = true

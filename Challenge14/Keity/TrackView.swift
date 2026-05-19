@@ -24,6 +24,10 @@ class TrackView: UIView {
     }
     
     private var capaWidthConstraint: NSLayoutConstraint?
+    private var capaTopConstraint: NSLayoutConstraint?
+    private var infoRowTopConstraint: NSLayoutConstraint?
+    private var progressTopConstraint: NSLayoutConstraint?
+    private var buttonsPlayTopConstraint: NSLayoutConstraint?
     
     required init?(coder: NSCoder) {
         fatalError()
@@ -56,11 +60,28 @@ class TrackView: UIView {
         contentView.addSubview(buttonsPlay)
         contentView.addSubview(footer)
         contentView.addSubview(lyrics)
+
     }
     
     private func setupConstraints() {
         let widthConstraint = capa.widthAnchor.constraint(equalToConstant: 0)
         capaWidthConstraint = widthConstraint
+        
+        // CAPA
+        let capaTop = capa.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 24)
+        capaTopConstraint = capaTop
+
+        // INFO ROW
+        let infoTop = infoRow.topAnchor.constraint(equalTo: capa.bottomAnchor, constant: 24)
+        infoRowTopConstraint = infoTop
+
+        // PROGRESS BAR
+        let progressTop = progress.topAnchor.constraint(equalTo: infoRow.bottomAnchor, constant: 16)
+        progressTopConstraint = progressTop
+
+        // BOTOES PLAY
+        let buttonsTop = buttonsPlay.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 24)
+        buttonsPlayTopConstraint = buttonsTop
         
         NSLayoutConstraint.activate([
             
@@ -84,24 +105,25 @@ class TrackView: UIView {
             navBar.heightAnchor.constraint(equalToConstant: 44),
             
             // CAPA
-            capa.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 24),
+            capaTop,
             capa.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             widthConstraint,
             capa.heightAnchor.constraint(equalTo: capa.widthAnchor),
+            capa.heightAnchor.constraint(lessThanOrEqualToConstant: 320), // máximo absoluto
             
             // INFO ROW
-            infoRow.topAnchor.constraint(equalTo: capa.bottomAnchor, constant: 24),
+            infoTop,
             infoRow.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             infoRow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             infoRow.heightAnchor.constraint(greaterThanOrEqualToConstant: 50),
             
             // PROGRESS BAR
-            progress.topAnchor.constraint(equalTo: infoRow.bottomAnchor, constant: 16),
+            progressTop,
             progress.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             progress.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             
             // BOTOES PLAY
-            buttonsPlay.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 24),
+            buttonsTop,
             buttonsPlay.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             buttonsPlay.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             buttonsPlay.heightAnchor.constraint(equalToConstant: 64),
@@ -136,9 +158,22 @@ class TrackView: UIView {
     private func updateCapaLayout() {
         let isLandscape = bounds.width > bounds.height
         let availableWidth = max(bounds.width - 64, 0)
-        print(" bounds: \(bounds), isLandscape: \(isLandscape), imageWidth: \(isLandscape ? availableWidth * 0.30 : availableWidth * 0.88)")
-        // portrait: largura quase total, landscape: pequena à esquerda
-        capaWidthConstraint?.constant = isLandscape ? availableWidth * 0.30 : availableWidth * 0.88
+        
+        // Calcula altura disponível descontando os elementos abaixo da capa
+            // navBar(44) + gaps + infoRow(~50) + progress(~20) + buttonsPlay(64) + footer(60) + lyrics(50)
+            let fixedElementsHeight: CGFloat = isLandscape ? 180 : 340
+            let availableHeightForCapa = max(bounds.height - fixedElementsHeight, 100)
+
+            let percentWidth = isLandscape ? availableWidth * 0.20 : availableWidth * 0.88
+            
+            // Capa nunca maior que o espaço vertical disponível
+            capaWidthConstraint?.constant = min(percentWidth, availableHeightForCapa)
+        
+        // Espaçamentos comprimidos no landscape
+            capaTopConstraint?.constant      = isLandscape ? 8  : 24
+            infoRowTopConstraint?.constant   = isLandscape ? 8  : 24
+            progressTopConstraint?.constant  = isLandscape ? 6  : 16
+            buttonsPlayTopConstraint?.constant = isLandscape ? 8 : 24
         
     }
     

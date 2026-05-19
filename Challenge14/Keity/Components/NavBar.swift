@@ -4,53 +4,61 @@
 //
 //  Created by Keitiely Silva Viana on 16/05/26.
 //
+
 import UIKit
 
 class NavBar: UIView {
-        //UIStackView - NavBarStackView
-        let navBarStackView: UIStackView = {
-               let view = UIStackView()
-               view.axis = .horizontal
-               view.distribution = .equalSpacing
-               view.alignment = .center
-               view.translatesAutoresizingMaskIntoConstraints = false
-               return view
-           }()
-        
-        //UIButton dentro da NavBar - voltar
-        let voltarButton: UIButton = {
-                let view = UIButton()
-                view.setImage(AppImages.chevronDown, for: .normal)
-                view.tintColor = AppColors.primaryText
-                view.translatesAutoresizingMaskIntoConstraints = false
-                return view
-            }()
-        
-        
-        //UIlabel dentro da NavBar - nome do album
-        let nomeAlbumLabel: UILabel = {
-                let view = UILabel()
-                view.text = "1 (Remastered)"
-                view.font = AppFonts.trackTitle
-                view.textColor = AppColors.primaryText
-                view.adjustsFontForContentSizeCategory = true
-                view.translatesAutoresizingMaskIntoConstraints = false
-                return view
-            }()
-        
-        //UIButton dentro da NavBar - tres pontinhos
-        let configButton: UIButton = {
-            let view = UIButton()
-            view.setImage(AppImages.ellipsis, for: .normal)
-            view.tintColor = AppColors.primaryText
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
-        
+    //UIStackView - NavBarStackView
+    let navBarStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .equalSpacing
+        view.alignment = .center
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //UIButton dentro da NavBar - voltar
+    let voltarButton: UIButton = {
+        let view = UIButton()
+        view.setImage(AppImages.chevronDown, for: .normal)
+        view.tintColor = AppColors.primaryText
+        view.accessibilityLabel = "Voltar"
+        view.accessibilityTraits = .button
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
+    //UIlabel dentro da NavBar - nome do album
+    let nomeAlbumLabel: UILabel = {
+        let view = UILabel()
+        view.isAccessibilityElement = true
+        view.text = "1 (Remastered)"
+        view.accessibilityLabel = "nome do album"
+        view.font = AppFonts.trackTitle
+        view.textColor = AppColors.primaryText
+        view.adjustsFontForContentSizeCategory = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    //UIButton dentro da NavBar - tres pontinhos
+    let configButton: UIButton = {
+        let view = UIButton()
+        view.setImage(AppImages.ellipsis, for: .normal)
+        view.tintColor = AppColors.primaryText
+        view.isAccessibilityElement = true 
+        view.accessibilityLabel = "Mais opções"
+        view.accessibilityTraits = .button
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false 
+        translatesAutoresizingMaskIntoConstraints = false
         setupHierarchy()
         setupConstraints()
     }
@@ -69,11 +77,11 @@ class NavBar: UIView {
     
     private func setupConstraints(){
         NSLayoutConstraint.activate([
-               navBarStackView.topAnchor.constraint(equalTo: topAnchor),
-               navBarStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-               navBarStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-               navBarStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-           ])
+            navBarStackView.topAnchor.constraint(equalTo: topAnchor),
+            navBarStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            navBarStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            navBarStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
     }
-
+    
 }

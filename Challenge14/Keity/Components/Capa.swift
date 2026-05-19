@@ -14,6 +14,9 @@ class Capa: UIView {
         let view = UIImageView()
         view.image = AppImages.capa
         view.contentMode = .scaleAspectFill
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Capa Album 1 Remastered, The Beatles"
+        view.accessibilityTraits = .image
         view.translatesAutoresizingMaskIntoConstraints = false// é obrigatório, sem ele o Auto Layout não funciona.
         return view
     }()

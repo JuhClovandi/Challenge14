@@ -34,6 +34,9 @@ class FooterView: UIView {
         view.imageView?.contentMode = .scaleAspectFit
         view.contentVerticalAlignment = .fill
         view.contentHorizontalAlignment = .fill
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Dispositivo de saída: BEATSPILL+"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
       
         return view
@@ -41,7 +44,10 @@ class FooterView: UIView {
     
     let textBluetooth: UILabel = {
         let label = UILabel()
+        label.isAccessibilityElement = true
         label.text = "BEATSPILL+"
+        label.accessibilityLabel = "BEATSPILL+"
+        label.accessibilityTraits = .staticText
         label.font = AppFonts.bluetooth
         label.textColor = AppColors.destach
         label.adjustsFontForContentSizeCategory = true
@@ -65,6 +71,9 @@ class FooterView: UIView {
         let view = UIButton()
         view.setImage(AppImages.share, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Compartilhar música"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -74,6 +83,9 @@ class FooterView: UIView {
         let view = UIButton()
         view.setImage(AppImages.list, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true 
+        view.accessibilityLabel = "Fila de reprodução"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

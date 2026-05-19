@@ -4,7 +4,6 @@
 //
 //  Created by Keitiely Silva Viana on 16/05/26.
 //
-
 import UIKit
 
 class ButtonsPlay: UIView{
@@ -24,6 +23,9 @@ class ButtonsPlay: UIView{
         let view = UIButton()
         view.setImage(AppImages.shuffle, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Aleatório"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,6 +35,9 @@ class ButtonsPlay: UIView{
         let view = UIButton()
         view.setImage(AppImages.previous, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Música anterior"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,6 +47,9 @@ class ButtonsPlay: UIView{
         let view = UIButton()
         view.setImage(AppImages.playPause, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Pausar"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -51,6 +59,9 @@ class ButtonsPlay: UIView{
         let view = UIButton()
         view.setImage(AppImages.next, for: .normal)
         view.tintColor = AppColors.icon
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = "Próxima música"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -60,6 +71,9 @@ class ButtonsPlay: UIView{
         let view = UIButton()
         view.setImage(AppImages.repeatIcon, for: .normal)
         view.tintColor = AppColors.accent
+        view.isAccessibilityElement = true 
+        view.accessibilityLabel = "Repetir"
+        view.accessibilityTraits = .button
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -82,6 +96,15 @@ class ButtonsPlay: UIView{
         buttonStackView.addArrangedSubview(playPauseButton)
         buttonStackView.addArrangedSubview(nextButton)
         buttonStackView.addArrangedSubview(repeatButton)
+        
+        //forca hierarquia no Voice Over
+        buttonStackView.accessibilityElements = [
+                shuffleButton,
+                previousButton,
+                playPauseButton,
+                nextButton,
+                repeatButton
+            ]
     }
     
     private func setupConstraints(){
