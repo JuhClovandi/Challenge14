@@ -21,10 +21,10 @@
                                 <rect key="frame" x="5" y="68" width="383" height="698"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-VJ-HtZ" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="894"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="890.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="K6M-JM-7n3">
-                                                <rect key="frame" x="0.0" y="0.0" width="383" height="894"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="383" height="890.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-m1-hhe" userLabel="HeaderStack">
                                                         <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
@@ -64,10 +64,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayg-Ew-hd9" userLabel="FilterStack">
-                                                        <rect key="frame" x="0.0" y="84" width="383" height="32"/>
+                                                        <rect key="frame" x="0.0" y="84" width="383" height="28.333333333333329"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94h-3l-FEg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="28.333333333333332"/>
                                                                 <color key="backgroundColor" white="0.12938850308641975" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Playlist filter" label="Playlist filter"/>
                                                                 <state key="normal" title="Button"/>
@@ -77,7 +77,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcG-uc-CHh">
-                                                                <rect key="frame" x="100.33333333333331" y="0.0" width="82.666666666666686" height="32"/>
+                                                                <rect key="frame" x="100.33333333333331" y="0.0" width="82.666666666666686" height="28.333333333333332"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Artists filter" label="Artists filter"/>
                                                                 <state key="normal" title="Button"/>
@@ -87,7 +87,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRW-eP-Ern">
-                                                                <rect key="frame" x="188" y="0.0" width="81.666666666666686" height="32"/>
+                                                                <rect key="frame" x="188" y="0.0" width="81.666666666666686" height="28.333333333333332"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Album filter" label="Album filter"/>
                                                                 <state key="normal" title="Button"/>
@@ -97,7 +97,7 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zI-pg-CQ3">
-                                                                <rect key="frame" x="274.66666666666669" y="0.0" width="108.33333333333331" height="32"/>
+                                                                <rect key="frame" x="274.66666666666669" y="0.0" width="108.33333333333331" height="28.333333333333332"/>
                                                                 <color key="backgroundColor" white="0.1293885031" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Podcasts filter" label="Podcasts filter"/>
                                                                 <state key="normal" title="Button"/>
@@ -107,12 +107,9 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="vFe-FD-5Jc"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xaV-8L-afX" userLabel="RecentlyRow">
-                                                        <rect key="frame" x="0.0" y="140" width="383" height="40"/>
+                                                        <rect key="frame" x="0.0" y="136.33333333333334" width="383" height="40"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up.arrow.down" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bl5-Z3-OnM">
                                                                 <rect key="frame" x="0.0" y="10.999999999999998" width="23.666666666666668" height="18.333333333333329"/>
@@ -144,7 +141,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x9q-Ts-pEd" userLabel="ContentStack">
-                                                        <rect key="frame" x="0.0" y="204" width="383" height="690"/>
+                                                        <rect key="frame" x="0.0" y="200.33333333333326" width="383" height="690"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s1X-oz-zoQ" userLabel="row">
                                                                 <rect key="frame" x="0.0" y="0.0" width="383" height="90"/>
@@ -156,7 +153,7 @@
                                                                         </accessibility>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-Qf-Io4" userLabel="Text">
-                                                                        <rect key="frame" x="87" y="27.333333333333318" width="296" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="87" y="27.333333333333375" width="296" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnE-pM-vIj">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="18"/>
@@ -188,7 +185,7 @@
                                                                         <accessibility key="accessibilityConfiguration" hint="Image bell" label="Image bell"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rCt-xp-p3f" userLabel="Text">
-                                                                        <rect key="frame" x="87" y="27.333333333333318" width="296" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="87" y="27.333333333333375" width="296" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New episodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbo-Iz-Shs">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="18"/>
@@ -223,7 +220,7 @@
                                                                         </accessibility>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HlI-lK-5ye" userLabel="Text">
-                                                                        <rect key="frame" x="86" y="27.333333333333318" width="297" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="86" y="27.333333333333375" width="297" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lolo Zouai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLj-KC-8Wp">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="71" height="18"/>
@@ -235,7 +232,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPA-WX-6Wn">
-                                                                                <rect key="frame" x="0.0" y="22.000000000000057" width="28.666666666666668" height="13.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="21.999999999999943" width="28.666666666666668" height="13.333333333333336"/>
                                                                                 <accessibility key="accessibilityConfiguration" hint="Artist" label="Artist"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,7 +246,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e7l-aI-aAs" userLabel="row">
-                                                                <rect key="frame" x="0.0" y="300" width="383" height="90"/>
+                                                                <rect key="frame" x="0.0" y="300.00000000000006" width="383" height="90"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image5" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzl-Ar-0eG">
                                                                         <rect key="frame" x="0.0" y="12" width="71" height="66"/>
@@ -259,7 +256,7 @@
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-OC-pf9" userLabel="Text">
-                                                                        <rect key="frame" x="91" y="27.333333333333375" width="292" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="91" y="27.333333333333261" width="292" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44l-Bw-4g6">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
@@ -285,7 +282,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXL-7D-EZU" userLabel="row">
-                                                                <rect key="frame" x="0.0" y="400" width="383" height="90"/>
+                                                                <rect key="frame" x="0.0" y="400.00000000000006" width="383" height="90"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image6" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Kv-Xn-y6g">
                                                                         <rect key="frame" x="0.0" y="12.666666666666629" width="65" height="65"/>
@@ -294,7 +291,7 @@
                                                                         </accessibility>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="alM-oD-KkZ" userLabel="Text">
-                                                                        <rect key="frame" x="85" y="27.333333333333375" width="298" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="85" y="27.333333333333261" width="298" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quQ-kd-x57">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="18"/>
@@ -326,7 +323,7 @@
                                                                         <rect key="frame" x="0.0" y="12.666666666666629" width="67" height="65"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bs7-Sb-ZbO" userLabel="Text">
-                                                                        <rect key="frame" x="87" y="27.333333333333375" width="296" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="87" y="27.333333333333261" width="296" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-ad-07r">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="85.333333333333329" height="18"/>
@@ -354,7 +351,7 @@
                                                                         <rect key="frame" x="0.0" y="12.666666666666629" width="65" height="65"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WIg-ud-ngo" userLabel="Text">
-                                                                        <rect key="frame" x="85" y="27.333333333333375" width="298" height="35.333333333333343"/>
+                                                                        <rect key="frame" x="85" y="27.333333333333261" width="298" height="35.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqS-tV-M1I">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="18"/>
@@ -487,6 +484,7 @@
                         <outlet property="arrowIcon" destination="bl5-Z3-OnM" id="EEi-nK-7Di"/>
                         <outlet property="artistsButton" destination="XcG-uc-CHh" id="DhK-8b-iTh"/>
                         <outlet property="contentView" destination="ZxN-VJ-HtZ" id="3ng-Q7-5JU"/>
+                        <outlet property="filterStack" destination="ayg-Ew-hd9" id="D2T-WB-zaI"/>
                         <outlet property="gridIcon" destination="zz3-g9-Rgp" id="UAr-hG-cmG"/>
                         <outlet property="homeImg" destination="TKa-yv-LrR" id="NRI-MB-z6T"/>
                         <outlet property="libraryImg" destination="6Il-Ho-Kbs" id="imz-x6-I0U"/>

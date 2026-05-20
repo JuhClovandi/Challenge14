@@ -14,6 +14,7 @@ class YourLibraryViewController: UIViewController {
 	@IBOutlet weak var tabStack: UIStackView!
 	@IBOutlet weak var contentView: UIView!
 	@IBOutlet weak var stackView: UIStackView!
+	@IBOutlet weak var filterStack: UIStackView!
 	
 	//images
 	@IBOutlet weak var profileImage: UIImageView!
@@ -45,6 +46,7 @@ class YourLibraryViewController: UIViewController {
 	private var tabIconConstraints: [NSLayoutConstraint] = []
 	private var smallIconConstraints: [NSLayoutConstraint] = []
 	private var profileImageConstraints: [NSLayoutConstraint] = []
+	private var filterStackConstraints: [NSLayoutConstraint] = []
 	
 	private var rowImages: [UIImageView] {
 		[rowImg1, rowImg2, rowImg3, rowImg4, rowImg5, rowImg6, rowImg7]
@@ -170,6 +172,14 @@ class YourLibraryViewController: UIViewController {
 		
 		NSLayoutConstraint.activate([profileWidth, profileHeight])
 		profileImageConstraints.append(contentsOf: [profileWidth, profileHeight])
+		
+		filterStack.translatesAutoresizingMaskIntoConstraints = false
+		
+		let filterStackWidth = filterStack.widthAnchor.constraint(equalToConstant: 32)
+		let filterStackHeight = filterStack.heightAnchor.constraint(equalToConstant: 32)
+		
+		NSLayoutConstraint.activate([filterStackWidth, filterStackHeight])
+		filterStackConstraints.append(contentsOf: [filterStackWidth, filterStackHeight])
 		
 	}
 	
