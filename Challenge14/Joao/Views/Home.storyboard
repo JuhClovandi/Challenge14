@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,63 +11,64 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="homeViewController" customModule="Challenge14" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="Qf1-sx-qmn">
-                                <rect key="frame" x="0.0" y="46" width="852" height="189"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Qf1-sx-qmn">
+                                <rect key="frame" x="0.0" y="46" width="393" height="648"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ch-Cq-Qca">
-                                        <rect key="frame" x="0.0" y="0.0" width="852" height="1041"/>
+                                    <view contentMode="scaleToFill" id="2ch-Cq-Qca">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Played" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-zI-hvr">
-                                                <rect key="frame" x="76" y="0.0" width="126.66666666666669" height="20.333333333333332"/>
+                                                <rect key="frame" x="17.000000000000007" y="0.0" width="126.66666666666669" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your 2021 in review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-Dp-SuP">
-                                                <rect key="frame" x="148.00000000000003" y="192.33333333333334" width="282.66666666666674" height="40.666666666666657"/>
+                                                <rect key="frame" x="89" y="192.33333333333331" width="282.66666666666669" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-t7-YKH">
-                                                <rect key="frame" x="76" y="28.333333333333329" width="105" height="104.99999999999999"/>
+                                                <rect key="frame" x="17" y="28.333333333333343" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="8SY-go-0bx"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="RKY-DC-dgl"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="1 (Remastered)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-Fc-fTg">
-                                                <rect key="frame" x="76" y="133.33333333333334" width="92" height="15.666666666666657"/>
+                                                <rect key="frame" x="17" y="133.33333333333334" width="92" height="15.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 (Remastered)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-pa-esT">
-                                                <rect key="frame" x="76" y="403" width="92" height="15.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Top Songs 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-pa-esT">
+                                                <rect key="frame" x="17" y="403" width="128" height="15.666666666666686"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lana" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su9-Vu-PpQ">
-                                                <rect key="frame" x="189" y="28.333333333333329" width="105" height="104.99999999999999"/>
+                                                <rect key="frame" x="130" y="28.333333333333343" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="105" id="Zd5-7R-w3W"/>
                                                     <constraint firstAttribute="height" constant="105" id="pe2-cL-HWg"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVJ-Ji-DZM">
-                                                <rect key="frame" x="189" y="133.33333333333334" width="78.666666666666686" height="15.666666666666657"/>
+                                                <rect key="frame" x="130" y="133.33333333333334" width="78.666666666666686" height="15.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvin" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-LS-9Wr">
-                                                <rect key="frame" x="302" y="28.333333333333329" width="105" height="104.99999999999999"/>
+                                                <rect key="frame" x="243" y="28.333333333333343" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="7R5-AZ-5qa"/>
                                                     <constraint firstAttribute="width" constant="105" id="Hhe-ff-eGG"/>
@@ -75,65 +76,65 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpt-Fd-4kU">
-                                                <rect key="frame" x="302" y="133.33333333333334" width="75.333333333333314" height="15.666666666666657"/>
+                                                <rect key="frame" x="243.00000000000003" y="133.33333333333334" width="75.333333333333343" height="15.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndiePop" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-5g-mPC">
-                                                <rect key="frame" x="415" y="28.333333333333329" width="105" height="104.99999999999999"/>
+                                                <rect key="frame" x="356" y="28.333333333333343" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="105" id="aCb-Pp-R0c"/>
                                                     <constraint firstAttribute="height" constant="105" id="vwo-Bp-bZK"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indie Pop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdb-9p-b2A">
-                                                <rect key="frame" x="415" y="133.33333333333334" width="56.666666666666686" height="15.666666666666657"/>
+                                                <rect key="frame" x="356" y="133.33333333333334" width="56.666666666666686" height="15.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WLFGRL" translatesAutoresizingMaskIntoConstraints="NO" id="82a-TF-Low">
-                                                <rect key="frame" x="528" y="28.333333333333329" width="105" height="104.99999999999999"/>
+                                                <rect key="frame" x="469" y="28.333333333333343" width="105" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="105" id="3xf-C0-ycr"/>
                                                     <constraint firstAttribute="height" constant="105" id="mja-gg-VXt"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WLFGRL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-h8-6dM">
-                                                <rect key="frame" x="528" y="133.33333333333334" width="52.666666666666629" height="15.666666666666657"/>
+                                                <rect key="frame" x="469" y="133.33333333333334" width="52.666666666666629" height="15.666666666666657"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Artists" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-ai-w49">
-                                                <rect key="frame" x="234" y="245" width="150" height="150"/>
+                                                <rect key="frame" x="175" y="245" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="2AQ-pf-Y1d"/>
                                                     <constraint firstAttribute="height" constant="150" id="x6t-rC-cwm"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#SPOTIFYWRAPPED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Z1-Qwm">
-                                                <rect key="frame" x="148" y="178" width="116" height="14.333333333333343"/>
+                                                <rect key="frame" x="89" y="178" width="116" height="14.333333333333343"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 (Remastered)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVV-lW-bT5">
-                                                <rect key="frame" x="234" y="403" width="92" height="15.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Artists Revealed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVV-lW-bT5">
+                                                <rect key="frame" x="175" y="403" width="129" height="15.666666666666686"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WrappedMini" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVh-Il-AdS">
-                                                <rect key="frame" x="76" y="173" width="64" height="64"/>
+                                                <rect key="frame" x="17" y="173" width="64" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="9eM-9K-mNN"/>
                                                     <constraint firstAttribute="width" constant="64" id="zMl-BE-DWg"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Top2021" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-6B-YX1">
-                                                <rect key="frame" x="76" y="245" width="150" height="150"/>
+                                                <rect key="frame" x="17" y="245" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="1ft-rB-8jm"/>
                                                     <constraint firstAttribute="width" constant="150" id="6uT-eG-Qfb"/>
@@ -141,34 +142,34 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editor's picks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-Kr-d6a">
-                                                <rect key="frame" x="76" y="434.66666666666669" width="107.66666666666669" height="20.333333333333314"/>
+                                                <rect key="frame" x="17.000000000000007" y="434.66666666666663" width="107.66666666666669" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="A1" translatesAutoresizingMaskIntoConstraints="NO" id="Erz-Vl-jr9">
-                                                <rect key="frame" x="76" y="459" width="150" height="150"/>
+                                                <rect key="frame" x="17" y="459" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="lEl-BC-z6g"/>
                                                     <constraint firstAttribute="width" constant="150" id="rQH-OH-nFI"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="TTH" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-vU-nEd">
-                                                <rect key="frame" x="392" y="459" width="150" height="150"/>
+                                                <rect key="frame" x="333" y="459" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="0pz-VS-QOX"/>
                                                     <constraint firstAttribute="height" constant="150" id="ZkY-9J-yph"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Left" translatesAutoresizingMaskIntoConstraints="NO" id="QGY-Za-PtW">
-                                                <rect key="frame" x="234" y="459" width="150" height="150"/>
+                                                <rect key="frame" x="175" y="459" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="ULs-5D-hSX"/>
                                                     <constraint firstAttribute="height" constant="150" id="w3u-HV-Nz7"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV8-h0-Fl7">
-                                                <rect key="frame" x="76" y="613" width="134" height="26.333333333333371"/>
+                                                <rect key="frame" x="17" y="613" width="134" height="26.333333333333371"/>
                                                 <string key="text">Ed Sheeran, Big Sean, 
 Juice WRLD, Post Malone</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
@@ -176,7 +177,7 @@ Juice WRLD, Post Malone</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-0o-hZD">
-                                                <rect key="frame" x="234" y="613" width="136" height="26.333333333333371"/>
+                                                <rect key="frame" x="175" y="613" width="136" height="26.333333333333371"/>
                                                 <string key="text">Mitski, Tame Impala, 
 Glass Animals, Charli XCX</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
@@ -184,13 +185,25 @@ Glass Animals, Charli XCX</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-Xe-2CV">
-                                                <rect key="frame" x="392" y="613" width="136" height="26.333333333333371"/>
+                                                <rect key="frame" x="333" y="613" width="136" height="26.333333333333371"/>
                                                 <string key="text">Mitski, Tame Impala, 
 Glass Animals, Charli XCX</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                 <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-d7-VQl">
+                                                <rect key="frame" x="300.33333333333331" y="0.66666666666666607" width="19" height="19.333333333333336"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock.arrow.circlepath" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-l3-jXH">
+                                                <rect key="frame" x="327" y="0.66666666666666607" width="20.333333333333314" height="19"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-J8-xbB">
+                                                <rect key="frame" x="355.33333333333331" y="0.33333333333333215" width="20.666666666666686" height="20"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="fn8-Fp-VU1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -210,14 +223,18 @@ Glass Animals, Charli XCX</string>
                                             <constraint firstItem="Mlp-Z1-Qwm" firstAttribute="leading" secondItem="IVh-Il-AdS" secondAttribute="trailing" constant="8" id="AK1-6F-enB"/>
                                             <constraint firstItem="WyS-t7-YKH" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="bottom" constant="8" id="DTX-ke-0M6"/>
                                             <constraint firstItem="BtL-pa-esT" firstAttribute="top" secondItem="4sW-6B-YX1" secondAttribute="bottom" constant="8" symbolic="YES" id="Fhx-xr-5zf"/>
+                                            <constraint firstItem="KYI-J8-xbB" firstAttribute="leading" secondItem="6Ku-l3-jXH" secondAttribute="trailing" constant="8" id="IH5-b1-VJU"/>
                                             <constraint firstItem="yTJ-zI-hvr" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="IcV-7D-62h"/>
                                             <constraint firstItem="kHe-h8-6dM" firstAttribute="leading" secondItem="82a-TF-Low" secondAttribute="leading" id="IrU-x5-AzC"/>
+                                            <constraint firstItem="6Ku-l3-jXH" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="Kbr-yN-Egx"/>
                                             <constraint firstItem="IVh-Il-AdS" firstAttribute="top" secondItem="Sn0-Fc-fTg" secondAttribute="bottom" constant="24" id="Lhz-1r-Ewc"/>
                                             <constraint firstItem="Hcw-vU-nEd" firstAttribute="leading" secondItem="QGY-Za-PtW" secondAttribute="trailing" constant="8" id="O7B-cc-5BV"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="882" id="PaW-DY-uPr"/>
                                             <constraint firstItem="dJd-ai-w49" firstAttribute="leading" secondItem="4sW-6B-YX1" secondAttribute="trailing" constant="8" id="QA0-NM-c7G"/>
                                             <constraint firstItem="Su9-Vu-PpQ" firstAttribute="leading" secondItem="WyS-t7-YKH" secondAttribute="trailing" constant="8" id="Qaq-lh-m9k"/>
                                             <constraint firstItem="WyS-t7-YKH" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="SYz-B1-q4i"/>
+                                            <constraint firstItem="fn8-Fp-VU1" firstAttribute="trailing" secondItem="KYI-J8-xbB" secondAttribute="trailing" constant="17" id="U7P-nq-fPE"/>
+                                            <constraint firstItem="KYI-J8-xbB" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="V4l-SK-q6v"/>
                                             <constraint firstItem="gVV-lW-bT5" firstAttribute="leading" secondItem="dJd-ai-w49" secondAttribute="leading" id="WNw-Km-JXy"/>
                                             <constraint firstItem="4sW-6B-YX1" firstAttribute="leading" secondItem="IVh-Il-AdS" secondAttribute="leading" id="Yb3-UP-m2Q"/>
                                             <constraint firstItem="JVJ-Ji-DZM" firstAttribute="baseline" secondItem="Sn0-Fc-fTg" secondAttribute="firstBaseline" id="Z8w-AN-0D0"/>
@@ -235,6 +252,7 @@ Glass Animals, Charli XCX</string>
                                             <constraint firstItem="Mdb-9p-b2A" firstAttribute="leading" secondItem="P4I-5g-mPC" secondAttribute="leading" id="h6U-Js-dK4"/>
                                             <constraint firstItem="0bT-Kr-d6a" firstAttribute="top" secondItem="BtL-pa-esT" secondAttribute="bottom" constant="16" id="hC5-sd-tjf"/>
                                             <constraint firstItem="nyw-0o-hZD" firstAttribute="leading" secondItem="QGY-Za-PtW" secondAttribute="leading" id="hee-MK-7Tb"/>
+                                            <constraint firstItem="QxV-d7-VQl" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="iZX-6e-qdN"/>
                                             <constraint firstItem="BtL-pa-esT" firstAttribute="top" secondItem="4sW-6B-YX1" secondAttribute="bottom" constant="8" id="jwa-B5-juK"/>
                                             <constraint firstItem="LHd-Dp-SuP" firstAttribute="bottom" secondItem="IVh-Il-AdS" secondAttribute="bottom" constant="-4" id="k05-Rd-7sb"/>
                                             <constraint firstItem="yTJ-zI-hvr" firstAttribute="top" secondItem="fn8-Fp-VU1" secondAttribute="top" id="k1A-ap-94F"/>
@@ -251,6 +269,7 @@ Glass Animals, Charli XCX</string>
                                             <constraint firstItem="Erz-Vl-jr9" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="sgP-OD-mSh"/>
                                             <constraint firstItem="P4I-5g-mPC" firstAttribute="leading" secondItem="W3I-LS-9Wr" secondAttribute="trailing" constant="8" symbolic="YES" id="tXe-xh-dZ5"/>
                                             <constraint firstItem="QGY-Za-PtW" firstAttribute="leading" secondItem="Erz-Vl-jr9" secondAttribute="trailing" constant="8" id="u9q-u0-SSq"/>
+                                            <constraint firstItem="6Ku-l3-jXH" firstAttribute="leading" secondItem="QxV-d7-VQl" secondAttribute="trailing" constant="8" id="xfs-ki-ABq"/>
                                             <constraint firstItem="W3I-LS-9Wr" firstAttribute="leading" secondItem="Su9-Vu-PpQ" secondAttribute="trailing" constant="8" id="yYV-Y5-dpZ"/>
                                         </constraints>
                                     </view>
@@ -264,8 +283,8 @@ Glass Animals, Charli XCX</string>
                                     <constraint firstItem="2ch-Cq-Qca" firstAttribute="top" secondItem="Qf1-sx-qmn" secondAttribute="top" id="ygd-2G-EpM"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" ambiguous="YES" id="Lty-UF-YcF" userLabel="TabBar">
-                                <rect key="frame" x="0.0" y="313" width="852" height="80"/>
+                            <view contentMode="scaleToFill" id="Lty-UF-YcF" userLabel="TabBar">
+                                <rect key="frame" x="0.0" y="772" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="5nR-7E-aO2">
@@ -305,8 +324,8 @@ Glass Animals, Charli XCX</string>
                                     <constraint firstItem="5nR-7E-aO2" firstAttribute="centerX" secondItem="Lty-UF-YcF" secondAttribute="centerX" id="Pwf-Zb-viJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" id="bZe-ai-a0i" userLabel="Player">
-                                <rect key="frame" x="7" y="243" width="837" height="64"/>
+                            <view contentMode="scaleToFill" id="bZe-ai-a0i" userLabel="Player">
+                                <rect key="frame" x="7" y="702" width="378" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-WE-j1v">
@@ -317,13 +336,13 @@ Glass Animals, Charli XCX</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Me to You - Mono / Remastered · " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm7-NI-WaI">
-                                        <rect key="frame" x="56" y="18" width="205" height="13"/>
+                                        <rect key="frame" x="56" y="18" width="205" height="13.333333333333336"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Beatles" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nTr-yW-UPS">
-                                        <rect key="frame" x="262" y="18" width="213" height="13"/>
+                                        <rect key="frame" x="262" y="18" width="43" height="13"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -338,24 +357,24 @@ Glass Animals, Charli XCX</string>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-HM-k06">
-                                        <rect key="frame" x="56" y="31" width="16" height="16"/>
+                                        <rect key="frame" x="56" y="31.333333333333314" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="LkA-Wd-GIF"/>
                                             <constraint firstAttribute="width" constant="16" id="RiB-IF-p5X"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEATSPILL+" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n90-gO-qt1">
-                                        <rect key="frame" x="80" y="33" width="63.666666666666657" height="13.333333333333336"/>
+                                        <rect key="frame" x="80" y="33.333333333333314" width="63.666666666666657" height="13.333333333333336"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <color key="textColor" red="0.1137254902" green="0.72549019609999998" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5y-fb-jth">
-                                        <rect key="frame" x="0.0" y="60" width="837" height="4"/>
+                                        <rect key="frame" x="0.0" y="60" width="378" height="4"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwe-Bw-oEi">
-                                                <rect key="frame" x="0.0" y="0.0" width="567" height="4"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="4"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -438,7 +457,10 @@ Glass Animals, Charli XCX</string>
         <image name="Top2021" width="584" height="590"/>
         <image name="WLFGRL" width="300" height="300"/>
         <image name="WrappedMini" width="343.33334350585938" height="343.33334350585938"/>
+        <image name="bell" catalog="system" width="125" height="128"/>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
+        <image name="clock.arrow.circlepath" catalog="system" width="128" height="119"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
