@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,263 +12,307 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="homeViewController" customModule="Challenge14" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Qf1-sx-qmn">
-                                <rect key="frame" x="0.0" y="46" width="852" height="189"/>
+                                <rect key="frame" x="0.0" y="46" width="393" height="648"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="2ch-Cq-Qca">
-                                        <rect key="frame" x="0.0" y="0.0" width="852" height="1041"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Played" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-zI-hvr">
-                                                <rect key="frame" x="76" y="0.0" width="126.66666666666669" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your 2021 in review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-Dp-SuP">
-                                                <rect key="frame" x="148.00000000000003" y="192.33333333333334" width="282.66666666666674" height="40.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-t7-YKH">
-                                                <rect key="frame" x="76" y="28.333333333333329" width="105" height="104.99999999999999"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="8SY-go-0bx"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="RKY-DC-dgl"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="1 (Remastered)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-Fc-fTg">
-                                                <rect key="frame" x="76" y="133.33333333333334" width="92" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Top Songs 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-pa-esT">
-                                                <rect key="frame" x="76" y="403" width="128" height="15.666666666666686"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lana" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su9-Vu-PpQ">
-                                                <rect key="frame" x="189" y="28.333333333333329" width="105" height="104.99999999999999"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="105" id="Zd5-7R-w3W"/>
-                                                    <constraint firstAttribute="height" constant="105" id="pe2-cL-HWg"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVJ-Ji-DZM">
-                                                <rect key="frame" x="189" y="133.33333333333334" width="78.666666666666686" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvin" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-LS-9Wr">
-                                                <rect key="frame" x="302" y="28.333333333333329" width="105" height="104.99999999999999"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="7R5-AZ-5qa"/>
-                                                    <constraint firstAttribute="width" constant="105" id="Hhe-ff-eGG"/>
-                                                    <constraint firstAttribute="height" constant="105" id="v8D-Dr-iHo"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpt-Fd-4kU">
-                                                <rect key="frame" x="302" y="133.33333333333334" width="75.333333333333314" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndiePop" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-5g-mPC">
-                                                <rect key="frame" x="415" y="28.333333333333329" width="105" height="104.99999999999999"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="105" id="aCb-Pp-R0c"/>
-                                                    <constraint firstAttribute="height" constant="105" id="vwo-Bp-bZK"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indie Pop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdb-9p-b2A">
-                                                <rect key="frame" x="415" y="133.33333333333334" width="56.666666666666686" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WLFGRL" translatesAutoresizingMaskIntoConstraints="NO" id="82a-TF-Low">
-                                                <rect key="frame" x="528" y="28.333333333333329" width="105" height="104.99999999999999"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="105" id="3xf-C0-ycr"/>
-                                                    <constraint firstAttribute="height" constant="105" id="mja-gg-VXt"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WLFGRL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-h8-6dM">
-                                                <rect key="frame" x="528" y="133.33333333333334" width="52.666666666666629" height="15.666666666666657"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Artists" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-ai-w49">
-                                                <rect key="frame" x="234" y="245" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="2AQ-pf-Y1d"/>
-                                                    <constraint firstAttribute="height" constant="150" id="x6t-rC-cwm"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#SPOTIFYWRAPPED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Z1-Qwm">
-                                                <rect key="frame" x="148" y="178" width="116" height="14.333333333333343"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Artists Revealed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVV-lW-bT5">
-                                                <rect key="frame" x="234" y="403" width="129" height="15.666666666666686"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WrappedMini" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVh-Il-AdS">
-                                                <rect key="frame" x="76" y="173" width="64" height="64"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="64" id="9eM-9K-mNN"/>
-                                                    <constraint firstAttribute="width" constant="64" id="zMl-BE-DWg"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Top2021" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-6B-YX1">
-                                                <rect key="frame" x="76" y="245" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="1ft-rB-8jm"/>
-                                                    <constraint firstAttribute="width" constant="150" id="6uT-eG-Qfb"/>
-                                                </constraints>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editor's picks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-Kr-d6a">
-                                                <rect key="frame" x="76" y="434.66666666666669" width="107.66666666666669" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="A1" translatesAutoresizingMaskIntoConstraints="NO" id="Erz-Vl-jr9">
-                                                <rect key="frame" x="76" y="459" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="lEl-BC-z6g"/>
-                                                    <constraint firstAttribute="width" constant="150" id="rQH-OH-nFI"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="TTH" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-vU-nEd">
-                                                <rect key="frame" x="392" y="459" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="0pz-VS-QOX"/>
-                                                    <constraint firstAttribute="height" constant="150" id="ZkY-9J-yph"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Left" translatesAutoresizingMaskIntoConstraints="NO" id="QGY-Za-PtW">
-                                                <rect key="frame" x="234" y="459" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="ULs-5D-hSX"/>
-                                                    <constraint firstAttribute="height" constant="150" id="w3u-HV-Nz7"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV8-h0-Fl7">
-                                                <rect key="frame" x="76" y="613" width="134" height="26.333333333333371"/>
-                                                <string key="text">Ed Sheeran, Big Sean, 
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-ce-H08" userLabel="Total Stack">
+                                                <rect key="frame" x="17" y="0.0" width="557" height="651.33333333333337"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gt1-CI-FTT" userLabel="RecentPlays View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="557" height="147"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Played" textAlignment="natural" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-zI-hvr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="557" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lyw-gj-9JF" userLabel="Recent PLays">
+                                                                <rect key="frame" x="0.0" y="26.333333333333321" width="557" height="120.66666666666669"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-zf-OVu">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="120.66666666666667"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-t7-YKH">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="8SY-go-0bx"/>
+                                                                                    <constraint firstAttribute="width" constant="105" id="RKY-DC-dgl"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="1 (Remastered)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-Fc-fTg">
+                                                                                <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Yv-Or-zL7" userLabel="LanaStack">
+                                                                        <rect key="frame" x="113" y="0.0" width="105" height="120.66666666666667"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lana" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su9-Vu-PpQ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="105" id="Zd5-7R-w3W"/>
+                                                                                    <constraint firstAttribute="height" constant="105" id="pe2-cL-HWg"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVJ-Ji-DZM">
+                                                                                <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qrb-hy-njd" userLabel="MarvinStack">
+                                                                        <rect key="frame" x="226" y="0.0" width="105" height="120.66666666666667"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvin" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-LS-9Wr">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="105" id="Hhe-ff-eGG"/>
+                                                                                    <constraint firstAttribute="height" constant="105" id="v8D-Dr-iHo"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpt-Fd-4kU">
+                                                                                <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBH-xU-ILK" userLabel="IndiePop View">
+                                                                        <rect key="frame" x="339" y="0.0" width="105" height="120.66666666666667"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndiePop" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-5g-mPC">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="105" id="aCb-Pp-R0c"/>
+                                                                                    <constraint firstAttribute="height" constant="105" id="vwo-Bp-bZK"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indie Pop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdb-9p-b2A">
+                                                                                <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oNw-c6-HR3" userLabel="WlfgrlStack">
+                                                                        <rect key="frame" x="452" y="0.0" width="105" height="120.66666666666667"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WLFGRL" translatesAutoresizingMaskIntoConstraints="NO" id="82a-TF-Low">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="105" id="3xf-C0-ycr"/>
+                                                                                    <constraint firstAttribute="height" constant="105" id="mja-gg-VXt"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WLFGRL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-h8-6dM">
+                                                                                <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-5k-qcu" userLabel="Wrapped View">
+                                                        <rect key="frame" x="0.0" y="171" width="557" height="64"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WrappedMini" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVh-Il-AdS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="64" id="9eM-9K-mNN"/>
+                                                                    <constraint firstAttribute="width" constant="64" id="zMl-BE-DWg"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-dv-kZo">
+                                                                <rect key="frame" x="72" y="0.0" width="485" height="64"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="#SPOTIFYWRAPPED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Z1-Qwm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="485" height="31.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                        <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your 2021 in review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-Dp-SuP">
+                                                                        <rect key="frame" x="0.0" y="23.333333333333339" width="485" height="40.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rtn-TF-dp4" userLabel="Top2021 VIew">
+                                                        <rect key="frame" x="0.0" y="259" width="557" height="165.66666666666663"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-yh-rgU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="165.66666666666666"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Top2021" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-6B-YX1">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="150" id="1ft-rB-8jm"/>
+                                                                            <constraint firstAttribute="width" constant="150" id="6uT-eG-Qfb"/>
+                                                                        </constraints>
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Top Songs 2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-pa-esT">
+                                                                        <rect key="frame" x="0.0" y="150" width="150" height="15.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Vp-Yi-abM">
+                                                                <rect key="frame" x="158" y="0.0" width="150" height="165.66666666666666"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Artists" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-ai-w49">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="150" id="2AQ-pf-Y1d"/>
+                                                                            <constraint firstAttribute="height" constant="150" id="x6t-rC-cwm"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Artists Revealed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVV-lW-bT5">
+                                                                        <rect key="frame" x="0.0" y="150" width="150" height="15.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yey-4Y-R5Y">
+                                                                <rect key="frame" x="316" y="0.0" width="241" height="165.66666666666666"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LK6-DK-inN" userLabel="Editors picks view">
+                                                        <rect key="frame" x="0.0" y="448.66666666666669" width="557" height="202.66666666666669"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editor's picks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bT-Kr-d6a">
+                                                                <rect key="frame" x="0.0" y="0.0" width="557" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ktO-49-eQ3">
+                                                                <rect key="frame" x="0.0" y="26.333333333333314" width="557" height="176.33333333333334"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-Q5-tUf">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="176.33333333333334"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Left" translatesAutoresizingMaskIntoConstraints="NO" id="QGY-Za-PtW">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="150" id="ULs-5D-hSX"/>
+                                                                                    <constraint firstAttribute="height" constant="150" id="w3u-HV-Nz7"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-0o-hZD">
+                                                                                <rect key="frame" x="0.0" y="150" width="150" height="26.333333333333343"/>
+                                                                                <string key="text">Mitski, Tame Impala, 
+Glass Animals, Charli XCX</string>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wkM-eb-86F">
+                                                                        <rect key="frame" x="158" y="0.0" width="150" height="176.33333333333334"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="A1" translatesAutoresizingMaskIntoConstraints="NO" id="Erz-Vl-jr9">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="150" id="lEl-BC-z6g"/>
+                                                                                    <constraint firstAttribute="width" constant="150" id="rQH-OH-nFI"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV8-h0-Fl7">
+                                                                                <rect key="frame" x="0.0" y="150" width="150" height="26.333333333333343"/>
+                                                                                <string key="text">Ed Sheeran, Big Sean, 
 Juice WRLD, Post Malone</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyw-0o-hZD">
-                                                <rect key="frame" x="234" y="613" width="136" height="26.333333333333371"/>
-                                                <string key="text">Mitski, Tame Impala, 
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-mo-BYv">
+                                                                        <rect key="frame" x="316" y="0.0" width="150" height="176.33333333333334"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="TTH" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-vU-nEd">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="150" id="0pz-VS-QOX"/>
+                                                                                    <constraint firstAttribute="height" constant="150" id="ZkY-9J-yph"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-Xe-2CV">
+                                                                                <rect key="frame" x="0.0" y="150" width="150" height="26.333333333333343"/>
+                                                                                <string key="text">Mitski, Tame Impala, 
 Glass Animals, Charli XCX</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-Xe-2CV">
-                                                <rect key="frame" x="392" y="613" width="136" height="26.333333333333371"/>
-                                                <string key="text">Mitski, Tame Impala, 
-Glass Animals, Charli XCX</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-d7-VQl">
-                                                <rect key="frame" x="700.33333333333337" y="0.66666666666666607" width="19" height="19.333333333333336"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock.arrow.circlepath" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-l3-jXH">
-                                                <rect key="frame" x="727" y="0.66666666666666607" width="20.333333333333371" height="19"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-J8-xbB">
-                                                <rect key="frame" x="755.33333333333337" y="0.33333333333333215" width="20.666666666666629" height="20"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eZ0-BA-sPW">
+                                                                        <rect key="frame" x="474" y="0.0" width="83" height="176.33333333333334"/>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWE-Kc-q1c" userLabel="Buttons">
+                                                <rect key="frame" x="317.33333333333331" y="0.0" width="59.666666666666686" height="20.333333333333332"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-d7-VQl">
+                                                        <rect key="frame" x="0.0" y="0.66666666666666607" width="19" height="19.333333333333336"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock.arrow.circlepath" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-l3-jXH">
+                                                        <rect key="frame" x="18.666666666666671" y="0.66666666666666607" width="20.333333333333329" height="19"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-J8-xbB">
+                                                        <rect key="frame" x="39" y="0.33333333333333215" width="20.666666666666671" height="20"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="fn8-Fp-VU1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Dpt-Fd-4kU" firstAttribute="leading" secondItem="W3I-LS-9Wr" secondAttribute="leading" id="0pa-Iy-Cew"/>
-                                            <constraint firstItem="JV8-h0-Fl7" firstAttribute="top" secondItem="Erz-Vl-jr9" secondAttribute="bottom" constant="4" id="0z0-w6-gts"/>
-                                            <constraint firstItem="82a-TF-Low" firstAttribute="leading" secondItem="P4I-5g-mPC" secondAttribute="trailing" constant="8" symbolic="YES" id="1s2-hF-5aV"/>
-                                            <constraint firstItem="Hcw-vU-nEd" firstAttribute="top" secondItem="QGY-Za-PtW" secondAttribute="top" id="1uS-uM-Qbg"/>
-                                            <constraint firstItem="BtL-pa-esT" firstAttribute="leading" secondItem="4sW-6B-YX1" secondAttribute="leading" id="2sl-88-gBM"/>
-                                            <constraint firstItem="4sW-6B-YX1" firstAttribute="top" secondItem="IVh-Il-AdS" secondAttribute="bottom" constant="8" symbolic="YES" id="3ch-4H-14t"/>
-                                            <constraint firstItem="0bT-Kr-d6a" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="40r-AG-5m2"/>
-                                            <constraint firstItem="P4I-5g-mPC" firstAttribute="top" secondItem="W3I-LS-9Wr" secondAttribute="top" id="68b-xF-POv"/>
-                                            <constraint firstItem="LHd-Dp-SuP" firstAttribute="leading" secondItem="IVh-Il-AdS" secondAttribute="trailing" constant="8" id="6te-LT-9wh"/>
-                                            <constraint firstItem="kHe-h8-6dM" firstAttribute="baseline" secondItem="Mdb-9p-b2A" secondAttribute="baseline" id="6y3-WA-Yg4"/>
-                                            <constraint firstItem="W3I-LS-9Wr" firstAttribute="firstBaseline" secondItem="Su9-Vu-PpQ" secondAttribute="firstBaseline" id="78B-al-JVN"/>
-                                            <constraint firstItem="IVh-Il-AdS" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="7gE-8L-6X0"/>
-                                            <constraint firstItem="Mlp-Z1-Qwm" firstAttribute="leading" secondItem="IVh-Il-AdS" secondAttribute="trailing" constant="8" id="AK1-6F-enB"/>
-                                            <constraint firstItem="WyS-t7-YKH" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="bottom" constant="8" id="DTX-ke-0M6"/>
-                                            <constraint firstItem="BtL-pa-esT" firstAttribute="top" secondItem="4sW-6B-YX1" secondAttribute="bottom" constant="8" symbolic="YES" id="Fhx-xr-5zf"/>
-                                            <constraint firstItem="KYI-J8-xbB" firstAttribute="leading" secondItem="6Ku-l3-jXH" secondAttribute="trailing" constant="8" id="IH5-b1-VJU"/>
-                                            <constraint firstItem="yTJ-zI-hvr" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="IcV-7D-62h"/>
-                                            <constraint firstItem="kHe-h8-6dM" firstAttribute="leading" secondItem="82a-TF-Low" secondAttribute="leading" id="IrU-x5-AzC"/>
-                                            <constraint firstItem="6Ku-l3-jXH" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="Kbr-yN-Egx"/>
-                                            <constraint firstItem="IVh-Il-AdS" firstAttribute="top" secondItem="Sn0-Fc-fTg" secondAttribute="bottom" constant="24" id="Lhz-1r-Ewc"/>
-                                            <constraint firstItem="Hcw-vU-nEd" firstAttribute="leading" secondItem="QGY-Za-PtW" secondAttribute="trailing" constant="8" id="O7B-cc-5BV"/>
+                                            <constraint firstItem="TRT-ce-H08" firstAttribute="top" secondItem="fn8-Fp-VU1" secondAttribute="top" id="Kyg-O2-DwM"/>
+                                            <constraint firstItem="fWE-Kc-q1c" firstAttribute="top" secondItem="fn8-Fp-VU1" secondAttribute="top" id="LBU-9S-tNp"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="882" id="PaW-DY-uPr"/>
-                                            <constraint firstItem="dJd-ai-w49" firstAttribute="leading" secondItem="4sW-6B-YX1" secondAttribute="trailing" constant="8" id="QA0-NM-c7G"/>
-                                            <constraint firstItem="Su9-Vu-PpQ" firstAttribute="leading" secondItem="WyS-t7-YKH" secondAttribute="trailing" constant="8" id="Qaq-lh-m9k"/>
-                                            <constraint firstItem="WyS-t7-YKH" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="SYz-B1-q4i"/>
-                                            <constraint firstItem="fn8-Fp-VU1" firstAttribute="trailing" secondItem="KYI-J8-xbB" secondAttribute="trailing" constant="17" id="U7P-nq-fPE"/>
-                                            <constraint firstItem="KYI-J8-xbB" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="V4l-SK-q6v"/>
-                                            <constraint firstItem="gVV-lW-bT5" firstAttribute="leading" secondItem="dJd-ai-w49" secondAttribute="leading" id="WNw-Km-JXy"/>
-                                            <constraint firstItem="4sW-6B-YX1" firstAttribute="leading" secondItem="IVh-Il-AdS" secondAttribute="leading" id="Yb3-UP-m2Q"/>
-                                            <constraint firstItem="JVJ-Ji-DZM" firstAttribute="baseline" secondItem="Sn0-Fc-fTg" secondAttribute="firstBaseline" id="Z8w-AN-0D0"/>
-                                            <constraint firstItem="QGY-Za-PtW" firstAttribute="top" secondItem="Erz-Vl-jr9" secondAttribute="top" id="c3i-Sc-g05"/>
-                                            <constraint firstItem="LHd-Dp-SuP" firstAttribute="top" secondItem="Mlp-Z1-Qwm" secondAttribute="bottom" id="chj-s8-peO"/>
-                                            <constraint firstItem="4sW-6B-YX1" firstAttribute="top" secondItem="IVh-Il-AdS" secondAttribute="bottom" constant="8" id="ckC-QC-xE1"/>
-                                            <constraint firstItem="nyw-0o-hZD" firstAttribute="top" secondItem="QGY-Za-PtW" secondAttribute="bottom" constant="4" id="dXd-Ql-Fkd"/>
-                                            <constraint firstItem="Erz-Vl-jr9" firstAttribute="firstBaseline" secondItem="0bT-Kr-d6a" secondAttribute="firstBaseline" constant="8" id="emk-YK-13i"/>
-                                            <constraint firstItem="Mdb-9p-b2A" firstAttribute="top" secondItem="P4I-5g-mPC" secondAttribute="bottom" id="esi-KK-hdK"/>
-                                            <constraint firstItem="JV8-h0-Fl7" firstAttribute="leading" secondItem="Erz-Vl-jr9" secondAttribute="leading" id="fLF-gA-ani"/>
-                                            <constraint firstItem="Sn0-Fc-fTg" firstAttribute="leading" secondItem="WyS-t7-YKH" secondAttribute="leading" id="g3N-hW-0Ex"/>
-                                            <constraint firstItem="gVV-lW-bT5" firstAttribute="top" secondItem="dJd-ai-w49" secondAttribute="bottom" constant="8" id="g55-SY-q1Y"/>
-                                            <constraint firstItem="kHe-h8-6dM" firstAttribute="top" secondItem="82a-TF-Low" secondAttribute="bottom" id="h3D-PU-9OU"/>
-                                            <constraint firstItem="Mdb-9p-b2A" firstAttribute="leading" secondItem="P4I-5g-mPC" secondAttribute="leading" id="h6U-Js-dK4"/>
-                                            <constraint firstItem="0bT-Kr-d6a" firstAttribute="top" secondItem="BtL-pa-esT" secondAttribute="bottom" constant="16" id="hC5-sd-tjf"/>
-                                            <constraint firstItem="nyw-0o-hZD" firstAttribute="leading" secondItem="QGY-Za-PtW" secondAttribute="leading" id="hee-MK-7Tb"/>
-                                            <constraint firstItem="QxV-d7-VQl" firstAttribute="top" secondItem="yTJ-zI-hvr" secondAttribute="top" id="iZX-6e-qdN"/>
-                                            <constraint firstItem="BtL-pa-esT" firstAttribute="top" secondItem="4sW-6B-YX1" secondAttribute="bottom" constant="8" id="jwa-B5-juK"/>
-                                            <constraint firstItem="LHd-Dp-SuP" firstAttribute="bottom" secondItem="IVh-Il-AdS" secondAttribute="bottom" constant="-4" id="k05-Rd-7sb"/>
-                                            <constraint firstItem="yTJ-zI-hvr" firstAttribute="top" secondItem="fn8-Fp-VU1" secondAttribute="top" id="k1A-ap-94F"/>
-                                            <constraint firstItem="P4I-5g-mPC" firstAttribute="firstBaseline" secondItem="Su9-Vu-PpQ" secondAttribute="firstBaseline" id="kLV-LY-IKz"/>
-                                            <constraint firstItem="Mdb-9p-b2A" firstAttribute="baseline" secondItem="Dpt-Fd-4kU" secondAttribute="baseline" id="kon-uv-s18"/>
-                                            <constraint firstItem="tn8-Xe-2CV" firstAttribute="leading" secondItem="Hcw-vU-nEd" secondAttribute="leading" id="lBy-MZ-8oh"/>
-                                            <constraint firstItem="tn8-Xe-2CV" firstAttribute="top" secondItem="Hcw-vU-nEd" secondAttribute="bottom" constant="4" id="lsj-cl-gSY"/>
-                                            <constraint firstItem="Su9-Vu-PpQ" firstAttribute="top" secondItem="WyS-t7-YKH" secondAttribute="firstBaseline" id="mSU-o3-vmu"/>
-                                            <constraint firstItem="JVJ-Ji-DZM" firstAttribute="leading" secondItem="Su9-Vu-PpQ" secondAttribute="leading" id="nVH-3g-nQt"/>
-                                            <constraint firstItem="Sn0-Fc-fTg" firstAttribute="top" secondItem="WyS-t7-YKH" secondAttribute="bottom" id="ndH-83-u3c"/>
-                                            <constraint firstItem="dJd-ai-w49" firstAttribute="top" secondItem="4sW-6B-YX1" secondAttribute="top" id="s6Y-M9-PRa"/>
-                                            <constraint firstItem="82a-TF-Low" firstAttribute="top" secondItem="P4I-5g-mPC" secondAttribute="top" id="sDn-r7-UVL"/>
-                                            <constraint firstItem="Erz-Vl-jr9" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="sgP-OD-mSh"/>
-                                            <constraint firstItem="P4I-5g-mPC" firstAttribute="leading" secondItem="W3I-LS-9Wr" secondAttribute="trailing" constant="8" symbolic="YES" id="tXe-xh-dZ5"/>
-                                            <constraint firstItem="QGY-Za-PtW" firstAttribute="leading" secondItem="Erz-Vl-jr9" secondAttribute="trailing" constant="8" id="u9q-u0-SSq"/>
-                                            <constraint firstItem="6Ku-l3-jXH" firstAttribute="leading" secondItem="QxV-d7-VQl" secondAttribute="trailing" constant="8" id="xfs-ki-ABq"/>
-                                            <constraint firstItem="W3I-LS-9Wr" firstAttribute="leading" secondItem="Su9-Vu-PpQ" secondAttribute="trailing" constant="8" id="yYV-Y5-dpZ"/>
+                                            <constraint firstItem="TRT-ce-H08" firstAttribute="leading" secondItem="fn8-Fp-VU1" secondAttribute="leading" constant="17" id="i2S-He-a8E"/>
+                                            <constraint firstItem="fn8-Fp-VU1" firstAttribute="trailing" secondItem="fWE-Kc-q1c" secondAttribute="trailing" constant="16" id="q0p-dc-16M"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -282,11 +326,11 @@ Glass Animals, Charli XCX</string>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" id="Lty-UF-YcF" userLabel="TabBar">
-                                <rect key="frame" x="0.0" y="313" width="852" height="80"/>
+                                <rect key="frame" x="0.0" y="772" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="5nR-7E-aO2">
-                                        <rect key="frame" x="266" y="14.333333333333371" width="320" height="51"/>
+                                        <rect key="frame" x="36.666666666666657" y="14.666666666666742" width="320" height="51"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-C6-9iY">
                                                 <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="51"/>
@@ -297,7 +341,7 @@ Glass Animals, Charli XCX</string>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A91-nE-vcs">
-                                                <rect key="frame" x="115.33333333333331" y="0.0" width="89.333333333333314" height="51"/>
+                                                <rect key="frame" x="115.33333333333334" y="0.0" width="89.333333333333343" height="51"/>
                                                 <color key="tintColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" imagePlacement="top" title="Search">
@@ -305,7 +349,7 @@ Glass Animals, Charli XCX</string>
                                                 </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpu-AF-gl7">
-                                                <rect key="frame" x="230.66666666666671" y="0.0" width="89.333333333333343" height="51"/>
+                                                <rect key="frame" x="230.66666666666666" y="0.0" width="89.333333333333343" height="51"/>
                                                 <color key="tintColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="books.vertical" catalog="system" imagePlacement="top" title="Your Library" titleAlignment="center">
@@ -323,7 +367,7 @@ Glass Animals, Charli XCX</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" id="bZe-ai-a0i" userLabel="Player">
-                                <rect key="frame" x="7" y="243" width="837" height="64"/>
+                                <rect key="frame" x="7" y="702" width="378" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-WE-j1v">
@@ -340,14 +384,14 @@ Glass Animals, Charli XCX</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Beatles" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nTr-yW-UPS">
-                                        <rect key="frame" x="262" y="18" width="213" height="13"/>
+                                        <rect key="frame" x="262" y="18" width="43" height="13"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="pause.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jF4-Cn-XVY">
-                                        <rect key="frame" x="802" y="21.999999999999957" width="20" height="20.666666666666671"/>
+                                        <rect key="frame" x="343" y="22.000000000000014" width="20" height="20.666666666666671"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="3Qs-n2-nkN"/>
@@ -368,11 +412,11 @@ Glass Animals, Charli XCX</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5y-fb-jth">
-                                        <rect key="frame" x="0.0" y="60" width="837" height="4"/>
+                                        <rect key="frame" x="0.0" y="60" width="378" height="4"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwe-Bw-oEi">
-                                                <rect key="frame" x="0.0" y="0.0" width="567" height="4"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="4"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -389,7 +433,7 @@ Glass Animals, Charli XCX</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Awu-Vy-6cK">
-                                        <rect key="frame" x="765" y="17.666666666666629" width="29" height="29"/>
+                                        <rect key="frame" x="306" y="17.666666666666686" width="29" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="UNc-RJ-s7j"/>
                                             <constraint firstAttribute="width" constant="29" id="kw1-E7-EfE"/>
@@ -435,11 +479,16 @@ Glass Animals, Charli XCX</string>
                             <constraint firstItem="bZe-ai-a0i" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="w3A-9L-lEF"/>
                             <constraint firstItem="Lty-UF-YcF" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="yk5-2U-rSS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bh3-Kw-CWA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062.6760563380283" y="129.00763358778624"/>
+            <point key="canvasLocation" x="1060.3053435114502" y="128.87323943661971"/>
         </scene>
     </scenes>
     <resources>
