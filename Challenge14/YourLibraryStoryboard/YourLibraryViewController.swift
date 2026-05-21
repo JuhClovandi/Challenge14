@@ -47,6 +47,7 @@ class YourLibraryViewController: UIViewController {
 	private var smallIconConstraints: [NSLayoutConstraint] = []
 	private var profileImageConstraints: [NSLayoutConstraint] = []
 	private var filterStackConstraints: [NSLayoutConstraint] = []
+	private var buttonHeightConstraints: [NSLayoutConstraint] = []
 	
 	private var rowImages: [UIImageView] {
 		[rowImg1, rowImg2, rowImg3, rowImg4, rowImg5, rowImg6, rowImg7]
@@ -175,11 +176,22 @@ class YourLibraryViewController: UIViewController {
 		
 		filterStack.translatesAutoresizingMaskIntoConstraints = false
 		
-		let filterStackWidth = filterStack.widthAnchor.constraint(equalToConstant: 32)
-		let filterStackHeight = filterStack.heightAnchor.constraint(equalToConstant: 32)
+		let filterStackWidth = filterStack.widthAnchor.constraint(equalToConstant: 40)
+		let filterStackHeight = filterStack.heightAnchor.constraint(equalToConstant: 50)
 		
 		NSLayoutConstraint.activate([filterStackWidth, filterStackHeight])
 		filterStackConstraints.append(contentsOf: [filterStackWidth, filterStackHeight])
+		
+		// Configurar constraints dos buttons
+		let buttons = [playlistsButton, artistsButton, albumButton, podcastsButton]
+		buttons.forEach { button in
+			if let button = button {
+				button.translatesAutoresizingMaskIntoConstraints = false
+				let heightConstraint = button.heightAnchor.constraint(equalToConstant: 40)
+				NSLayoutConstraint.activate([heightConstraint])
+				buttonHeightConstraints.append(heightConstraint)
+			}
+		}
 		
 	}
 	
@@ -205,9 +217,11 @@ class YourLibraryViewController: UIViewController {
 		smallIconConstraints.forEach { $0.constant = smallIconSize }
 		profileImageConstraints.forEach { $0.constant = profileSize }
 		
-		UIView.animate(withDuration: 0.2) {
-			self.view.layoutIfNeeded()
+		if let filterStack = filterStack {
+			let spacingValue: CGFloat = isIpad ? 12 : 8
+			filterStack.spacing = spacingValue * sizeMultiplier
 		}
+		
 	}
 	
 	private func getSizeMultiplier() -> CGFloat {
