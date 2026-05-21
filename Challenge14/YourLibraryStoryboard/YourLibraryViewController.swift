@@ -72,6 +72,8 @@ class YourLibraryViewController: UIViewController {
 		createSizeConstraints()
 		applyDeviceSizes()
 		
+		
+		
 		// Observar mudanças de Dynamic Type
 		NotificationCenter.default.addObserver(
 			self,
@@ -128,7 +130,7 @@ class YourLibraryViewController: UIViewController {
 		imageView.isAccessibilityElement = false
 		
 	}
-
+	
 	// constraits
 	private func createSizeConstraints() {
 		
@@ -152,12 +154,11 @@ class YourLibraryViewController: UIViewController {
 			NSLayoutConstraint.activate([width, height])
 			tabIconConstraints.append(contentsOf: [width, height])
 		}
-		
-		
+
 		
 		smallIcons.forEach { imageView in
 			imageView.translatesAutoresizingMaskIntoConstraints = false
-
+			
 			let width = imageView.widthAnchor.constraint(equalToConstant: 20)
 			let height = imageView.heightAnchor.constraint(equalToConstant: 20)
 			
@@ -174,23 +175,18 @@ class YourLibraryViewController: UIViewController {
 		NSLayoutConstraint.activate([profileWidth, profileHeight])
 		profileImageConstraints.append(contentsOf: [profileWidth, profileHeight])
 		
-		filterStack.translatesAutoresizingMaskIntoConstraints = false
+		let buttons = [
+			playlistsButton,
+			artistsButton,
+			albumButton,
+			podcastsButton
+		]
 		
-		let filterStackWidth = filterStack.widthAnchor.constraint(equalToConstant: 40)
-		let filterStackHeight = filterStack.heightAnchor.constraint(equalToConstant: 50)
-		
-		NSLayoutConstraint.activate([filterStackWidth, filterStackHeight])
-		filterStackConstraints.append(contentsOf: [filterStackWidth, filterStackHeight])
-		
-		// Configurar constraints dos buttons
-		let buttons = [playlistsButton, artistsButton, albumButton, podcastsButton]
 		buttons.forEach { button in
-			if let button = button {
-				button.translatesAutoresizingMaskIntoConstraints = false
-				let heightConstraint = button.heightAnchor.constraint(equalToConstant: 40)
-				NSLayoutConstraint.activate([heightConstraint])
-				buttonHeightConstraints.append(heightConstraint)
-			}
+			button?.titleLabel?.numberOfLines = 1
+			button?.titleLabel?.adjustsFontForContentSizeCategory = true
+			button?.setContentCompressionResistancePriority(.required, for: .horizontal)
+			button?.setContentHuggingPriority(.required, for: .horizontal)
 		}
 		
 	}
@@ -217,11 +213,6 @@ class YourLibraryViewController: UIViewController {
 		smallIconConstraints.forEach { $0.constant = smallIconSize }
 		profileImageConstraints.forEach { $0.constant = profileSize }
 		
-		if let filterStack = filterStack {
-			let spacingValue: CGFloat = isIpad ? 12 : 8
-			filterStack.spacing = spacingValue * sizeMultiplier
-		}
-		
 	}
 	
 	private func getSizeMultiplier() -> CGFloat {
@@ -237,11 +228,11 @@ class YourLibraryViewController: UIViewController {
 		case .large:
 			return 1.0
 		case .extraLarge:
-			return 1.15
+			return 1.0
 		case .extraExtraLarge:
-			return 1.30
+			return 1.20
 		case .extraExtraExtraLarge:
-			return 1.45
+			return 1.40
 		case .accessibilityMedium:
 			return 1.60
 		case .accessibilityLarge:
