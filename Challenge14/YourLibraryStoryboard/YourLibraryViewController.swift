@@ -73,7 +73,6 @@ class YourLibraryViewController: UIViewController {
 		applyDeviceSizes()
 		
 		
-		
 		// Observar mudanças de Dynamic Type
 		NotificationCenter.default.addObserver(
 			self,
@@ -93,11 +92,10 @@ class YourLibraryViewController: UIViewController {
 	}
 	
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-		super.traitCollectionDidChange(previousTraitCollection)
-		
-		// Chamado quando muda de dispositivo (orientação, iPad vs iPhone)
-		if previousTraitCollection?.userInterfaceIdiom != traitCollection.userInterfaceIdiom {
-			applyDeviceSizes()
+		registerForTraitChanges([UITraitUserInterfaceStyle.self]) {
+			
+			(self: Self, previousTraitCollection: UITraitCollection) in
+			self.applyDeviceSizes()
 		}
 	}
 	
@@ -154,7 +152,7 @@ class YourLibraryViewController: UIViewController {
 			NSLayoutConstraint.activate([width, height])
 			tabIconConstraints.append(contentsOf: [width, height])
 		}
-
+		
 		
 		smallIcons.forEach { imageView in
 			imageView.translatesAutoresizingMaskIntoConstraints = false
