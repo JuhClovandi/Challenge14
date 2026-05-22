@@ -21,7 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.overrideUserInterfaceStyle = .dark
         
-        window.rootViewController = MainSplitViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let artistVC = storyboard.instantiateViewController(withIdentifier: "ArtistsViewController") as! ArtistsViewController
+        
+        window.rootViewController = artistVC
+        
+       // window.rootViewController = MainSplitViewController()
+    
         self.window = window
         window.makeKeyAndVisible()
     }
