@@ -37,6 +37,7 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupView()
+        setupTraitObservers()
     }
     
     func buildHierarchy() {
@@ -141,22 +142,34 @@ class SearchViewController: UIViewController, ViewCodeProtocol {
         applyAdditionalChanges()
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        if traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
-
-            let isIpad = traitCollection.horizontalSizeClass == .regular
-
-            if isIpad {
-                playerView.isHidden = true
-            } else {
-                playerView.isHidden = false
-                playerView.configureForIphone()
-            }
-
-            updateScrollInsets(isIpad: isIpad)
+    // Centraliza os observadores modernos substituindo o NotificationCenter e o traitCollectionDidChange
+    private func setupTraitObservers() {
+        // 1. Monitora mudanças de tamanho de fonte (Dynamic Type)
+        registerForTraitChanges([UITraitPreferredContentSizeCategory.self]) { (vc: Self, previousTraitCollection: UITraitCollection) in
+            vc.headerHeightConstraint.constant = vc.scaledHeaderHeight()
+            vc.searchBarHeightConstraint.constant = vc.scaledSearchHeight()
+            
+            let isIpad = vc.traitCollection.horizontalSizeClass == .regular
+            vc.updateScrollInsets(isIpad: isIpad)
+            
+            vc.view.layoutIfNeeded()
         }
+        
+        // 2. Monitora mudanças de classe de tamanho horizontal (iPhone vs iPad)
+        registerForTraitChanges([UITraitHorizontalSizeClass.self]) { (vc: Self, previousTraitCollection: UITraitCollection) in
+            let isIpad = vc.traitCollection.horizontalSizeClass == .regular
+            vc.updatePlayerLayout(isIpad: isIpad)
+        }
+    }
+    
+    private func updatePlayerLayout(isIpad: Bool) {
+        if isIpad {
+            playerView.isHidden = true
+        } else {
+            playerView.isHidden = false
+            playerView.configureForIphone()
+        }
+        updateScrollInsets(isIpad: isIpad)
     }
     
     override func viewWillAppear(_ animated: Bool) {

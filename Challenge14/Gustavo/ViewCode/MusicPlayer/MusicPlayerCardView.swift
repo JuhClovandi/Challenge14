@@ -113,6 +113,7 @@ class MusicPlayerCardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupTraitObservers()
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -160,10 +161,13 @@ class MusicPlayerCardView: UIView {
         setNeedsLayout()
     }
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else { return }
-        updateDynamicTypeConstraints()
+    
+    private func setupTraitObservers() {
+        // Registra o observador focado em tamanho de fontes.
+        // O parâmetro 'view' é injetado pelo UIKit de forma segura (previne retain cycle)
+        registerForTraitChanges([UITraitPreferredContentSizeCategory.self]) { (view: Self, previousTraitCollection: UITraitCollection) in
+            view.updateDynamicTypeConstraints()
+        }
     }
 
     // Constraints

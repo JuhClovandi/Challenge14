@@ -47,6 +47,7 @@ class SearchBarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupTraitObservers()
     }
     
     required init?(coder: NSCoder) {
@@ -57,13 +58,12 @@ class SearchBarView: UIView {
         UIFontMetrics(forTextStyle: .body).scaledValue(for: 8)
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
-            let padding = scaledPadding()
-            topPadding?.constant = padding
-            bottomPadding?.constant = -padding
+    private func setupTraitObservers() {
+        registerForTraitChanges([UITraitPreferredContentSizeCategory.self]) { (searchBar: Self, previousTraitCollection: UITraitCollection) in
+            let padding = searchBar.scaledPadding()
+            searchBar.topPadding?.constant = padding
+            searchBar.bottomPadding?.constant = -padding
+            searchBar.layoutIfNeeded()
         }
     }
 }

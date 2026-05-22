@@ -25,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let artistVC = storyboard.instantiateViewController(withIdentifier: "ArtistsViewController") as! ArtistsViewController
         
         let libraryVC = LibraryViewController()
+        
+        // windows root comentadas, descomente para ver as outras
         window.rootViewController = libraryVC
         
 //        window.rootViewController = artistVC

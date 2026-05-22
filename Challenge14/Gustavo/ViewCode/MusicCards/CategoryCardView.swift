@@ -44,20 +44,23 @@ class CategoryCardView: UIView {
         albumImage.image = image ?? UIImage(named: "albumVazio")
         backgroundColor = color
         setupView()
+        setupTraitObservers()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
-            updateImageConstraints()
+    private func setupTraitObservers() {
+        // 1. Escuta mudanças no Dynamic Type de forma isolada
+        // O primeiro parâmetro do bloco (card) mapeia a própria instância de forma segura
+        registerForTraitChanges([UITraitPreferredContentSizeCategory.self]) { (card: Self, previousTraitCollection: UITraitCollection) in
+            card.updateImageConstraints()
         }
-        // RTL: recalcula a rotação quando a direção muda (ex: mudança de idioma em runtime)
-        if traitCollection.layoutDirection != previousTraitCollection?.layoutDirection {
-            applyImageRotation()
+        
+        // 2. Escuta mudanças na direção do layout (RTL / LTR)
+        registerForTraitChanges([UITraitLayoutDirection.self]) { (card: Self, previousTraitCollection: UITraitCollection) in
+            card.applyImageRotation()
         }
     }
 
