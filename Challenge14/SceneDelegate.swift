@@ -24,7 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let artistVC = storyboard.instantiateViewController(withIdentifier: "ArtistsViewController") as! ArtistsViewController
         
-        window.rootViewController = artistVC
+        let libraryVC = LibraryViewController()
+        window.rootViewController = libraryVC
+        
+//        window.rootViewController = artistVC
         
        // window.rootViewController = MainSplitViewController()
     
