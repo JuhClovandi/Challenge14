@@ -43,12 +43,15 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-t7-YKH">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa de Album 1 (Resmastered) dos Beatles.">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="105" id="8SY-go-0bx"/>
                                                                                     <constraint firstAttribute="width" constant="105" id="RKY-DC-dgl"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="1 (Remastered)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-Fc-fTg">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="1 (Remastered)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-Fc-fTg">
                                                                                 <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,12 +64,15 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lana" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Su9-Vu-PpQ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Imagem de artista Lana Del Rey">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="105" id="Zd5-7R-w3W"/>
                                                                                     <constraint firstAttribute="height" constant="105" id="pe2-cL-HWg"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVJ-Ji-DZM">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lana Del Rey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVJ-Ji-DZM">
                                                                                 <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,12 +85,15 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvin" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-LS-9Wr">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Imagem de artista Marvin Gaye">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="105" id="Hhe-ff-eGG"/>
                                                                                     <constraint firstAttribute="height" constant="105" id="v8D-Dr-iHo"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpt-Fd-4kU">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvin Gaye" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpt-Fd-4kU">
                                                                                 <rect key="frame" x="0.0" y="105.00000000000001" width="105" height="15.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,6 +106,9 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndiePop" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-5g-mPC">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa da Playlist Indie Pop">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="105" id="aCb-Pp-R0c"/>
                                                                                     <constraint firstAttribute="height" constant="105" id="vwo-Bp-bZK"/>
@@ -115,6 +127,9 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WLFGRL" translatesAutoresizingMaskIntoConstraints="NO" id="82a-TF-Low">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa de Album WLFGRL, de Machine Girl">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="105" id="3xf-C0-ycr"/>
                                                                                     <constraint firstAttribute="height" constant="105" id="mja-gg-VXt"/>
@@ -132,27 +147,30 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-5k-qcu" userLabel="Wrapped View">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-5k-qcu" userLabel="Wrapped View">
                                                         <rect key="frame" x="0.0" y="171" width="557" height="64"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WrappedMini" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVh-Il-AdS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                                <accessibility key="accessibilityConfiguration" label="Imagem ilustrativa do Wrapped 2021">
+                                                                    <bool key="isElement" value="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="64" id="9eM-9K-mNN"/>
                                                                     <constraint firstAttribute="width" constant="64" id="zMl-BE-DWg"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-dv-kZo">
-                                                                <rect key="frame" x="72" y="0.0" width="485" height="64"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3fN-dv-kZo">
+                                                                <rect key="frame" x="72" y="4.6666666666666572" width="485" height="55"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="#SPOTIFYWRAPPED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Z1-Qwm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="485" height="31.333333333333332"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#SPOTIFYWRAPPED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Z1-Qwm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="485" height="14.333333333333334"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your 2021 in review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-Dp-SuP">
-                                                                        <rect key="frame" x="0.0" y="23.333333333333339" width="485" height="40.666666666666657"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your 2021 in review" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-Dp-SuP">
+                                                                        <rect key="frame" x="0.0" y="14.333333333333339" width="485" height="40.666666666666657"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -169,6 +187,9 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Top2021" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-6B-YX1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                        <accessibility key="accessibilityConfiguration" label="Capa de Playlist Top Songs 2021">
+                                                                            <bool key="isElement" value="YES"/>
+                                                                        </accessibility>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="150" id="1ft-rB-8jm"/>
                                                                             <constraint firstAttribute="width" constant="150" id="6uT-eG-Qfb"/>
@@ -188,6 +209,9 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Artists" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-ai-w49">
                                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                        <accessibility key="accessibilityConfiguration" label="Capa de Playlist Your Artists Revealed de 2021">
+                                                                            <bool key="isElement" value="YES"/>
+                                                                        </accessibility>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="150" id="2AQ-pf-Y1d"/>
                                                                             <constraint firstAttribute="height" constant="150" id="x6t-rC-cwm"/>
@@ -223,6 +247,9 @@
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Left" translatesAutoresizingMaskIntoConstraints="NO" id="QGY-Za-PtW">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa da Playlist Front Left">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="150" id="ULs-5D-hSX"/>
                                                                                     <constraint firstAttribute="height" constant="150" id="w3u-HV-Nz7"/>
@@ -243,6 +270,9 @@ Glass Animals, Charli XCX</string>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="A1" translatesAutoresizingMaskIntoConstraints="NO" id="Erz-Vl-jr9">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa de playlist A1">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="150" id="lEl-BC-z6g"/>
                                                                                     <constraint firstAttribute="width" constant="150" id="rQH-OH-nFI"/>
@@ -263,6 +293,9 @@ Juice WRLD, Post Malone</string>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="TTH" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-vU-nEd">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                                <accessibility key="accessibilityConfiguration" label="Capa de playlist Today's Top Hits">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="150" id="0pz-VS-QOX"/>
                                                                                     <constraint firstAttribute="height" constant="150" id="ZkY-9J-yph"/>
@@ -287,19 +320,19 @@ Glass Animals, Charli XCX</string>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWE-Kc-q1c" userLabel="Buttons">
-                                                <rect key="frame" x="317.33333333333331" y="0.0" width="59.666666666666686" height="20.333333333333332"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fWE-Kc-q1c" userLabel="Buttons">
+                                                <rect key="frame" x="301.33333333333331" y="0.0" width="75.666666666666686" height="20.333333333333332"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-d7-VQl">
                                                         <rect key="frame" x="0.0" y="0.66666666666666607" width="19" height="19.333333333333336"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="clock.arrow.circlepath" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Ku-l3-jXH">
-                                                        <rect key="frame" x="18.666666666666671" y="0.66666666666666607" width="20.333333333333329" height="19"/>
+                                                        <rect key="frame" x="26.666666666666671" y="0.66666666666666607" width="20.333333333333329" height="19"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-J8-xbB">
-                                                        <rect key="frame" x="39" y="0.33333333333333215" width="20.666666666666671" height="20"/>
+                                                        <rect key="frame" x="54.999999999999993" y="0.33333333333333215" width="20.666666666666664" height="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                 </subviews>
@@ -372,18 +405,21 @@ Glass Animals, Charli XCX</string>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beatles" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-WE-j1v">
                                         <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                        <accessibility key="accessibilityConfiguration" label="Capa de Album 1 (Resmastered) dos Beatles.">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4CA-ad-p2q"/>
                                             <constraint firstAttribute="width" constant="32" id="H4S-rc-fxN"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Me to You - Mono / Remastered · " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm7-NI-WaI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Me to You - Mono / Remastered · " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm7-NI-WaI">
                                         <rect key="frame" x="56" y="18" width="205" height="13"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Beatles" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nTr-yW-UPS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Beatles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nTr-yW-UPS">
                                         <rect key="frame" x="262" y="18" width="43" height="13"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
@@ -400,6 +436,9 @@ Glass Animals, Charli XCX</string>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-HM-k06">
                                         <rect key="frame" x="56" y="31" width="16" height="16"/>
+                                        <accessibility key="accessibilityConfiguration" label="Simbolo de bluetooth">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="LkA-Wd-GIF"/>
                                             <constraint firstAttribute="width" constant="16" id="RiB-IF-p5X"/>
